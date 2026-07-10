@@ -74,22 +74,21 @@ tbody td{padding:0;height:28px;vertical-align:middle;}
   <h2>✍️ O.V.E.R PHYSICAL PETITION</h2>
   <p>Print this page and bring it to school. Each sheet holds <strong>20 signatures</strong>. Fill up a sheet, get another, keep going until you hit <strong>1,000 names</strong>. Then bring the stack to your principal, the news, or a sponsor.</p>
   <button class="print-btn" onclick="window.print()">🖨️ PRINT PETITION SHEETS</button>
-  <p class="tip">// TIP: PRINT MULTIPLE COPIES — 1 SHEET = 20 SIGNATURES — 50 SHEETS = 1,000</p>
+  <p class="tip">// PRINT THIS PAGE — PASS IT AROUND — COLLECT 100 SIGNATURES</p>
 </div>
 
 <!-- PETITION SHEETS (repeating) -->
 <div id="sheets"></div>
 
 <script>
-const SIGS_PER_SHEET = 20;
-const TOTAL_SIGS = 1000;
-const SHEETS = TOTAL_SIGS / SIGS_PER_SHEET; // 50 sheets
+const SIGS_PER_SHEET = 100;
+const SHEETS = 1;
 
 const container = document.getElementById('sheets');
 
 for(let s = 0; s < SHEETS; s++) {
-  const startNum = s * SIGS_PER_SHEET + 1;
-  const endNum = startNum + SIGS_PER_SHEET - 1;
+  const startNum = 1;
+  const endNum = 100;
 
   let rows = '';
   for(let i = startNum; i <= endNum; i++) {
@@ -120,7 +119,7 @@ for(let s = 0; s < SHEETS; s++) {
     </div>
 
     <div class="sheet-meta">
-      <span class="sheet-num">SHEET ${s+1} OF 50 &nbsp;·&nbsp; SIGNATURES ${startNum}–${endNum}</span>
+      <span class="sheet-num">SIGNATURES 1–100</span>
       <span class="sheet-goal">GOAL: 1,000 SIGNATURES</span>
     </div>
 
@@ -143,7 +142,6 @@ for(let s = 0; s < SHEETS; s++) {
         Founded by Oliver Vo, Age 10 · Ladera Ranch, CA · 2026
       </div>
       <div class="sheet-footer-right">
-        SHEET ${s+1} / 50<br>
         RETURN TO OLIVER VO WHEN FULL
       </div>
     </div>
