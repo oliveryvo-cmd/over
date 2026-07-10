@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>O.V.E.R — Physical Petition Sheet</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Nunito:wght@400;700&family=Courier+Prime:wght@400;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#f5f5f0;font-family:'Nunito',sans-serif;padding:40px 20px;}
+
+/* SCREEN ONLY — instructions */
+.screen-only{max-width:720px;margin:0 auto 40px;background:#060c1a;color:#f8faff;border-radius:16px;padding:32px;text-align:center;}
+.screen-only h2{font-family:'Oswald',sans-serif;font-size:28px;letter-spacing:3px;margin-bottom:12px;color:#8b5cf6;}
+.screen-only p{font-size:15px;color:#a0a8b8;line-height:1.7;margin-bottom:20px;}
+.print-btn{background:linear-gradient(135deg,#6c3fc5,#0ea5a0);border:none;padding:16px 48px;font-family:'Oswald',sans-serif;font-size:20px;letter-spacing:3px;color:#fff;font-weight:700;border-radius:8px;cursor:pointer;transition:all .2s;}
+.print-btn:hover{transform:translateY(-2px);}
+.tip{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:2px;color:#555;margin-top:12px;}
+
+/* PETITION SHEET */
+.sheet{max-width:720px;margin:0 auto 60px;background:#fff;border:1px solid #ddd;border-radius:4px;padding:40px 48px;page-break-after:always;}
+
+/* HEADER */
+.sheet-header{display:flex;align-items:center;gap:20px;border-bottom:4px solid #6c3fc5;padding-bottom:20px;margin-bottom:20px;}
+.sheet-logo{width:80px;height:80px;border-radius:50%;border:3px solid #6c3fc5;overflow:hidden;flex-shrink:0;}
+.sheet-logo img{width:100%;height:100%;object-fit:cover;}
+.sheet-header-text{}
+.sheet-title{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;letter-spacing:5px;line-height:1;}
+.sheet-title .o{color:#8b5cf6;}.sheet-title .v{color:#0ea5a0;}.sheet-title .e{color:#f59e0b;}.sheet-title .r{color:#ec4899;}.sheet-title .dot{color:#ccc;}
+.sheet-subtitle{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:#888;margin-top:4px;}
+.sheet-tagline{font-size:13px;color:#333;margin-top:6px;font-weight:700;}
+
+/* DECLARATION */
+.declaration{background:#f8f5ff;border-left:5px solid #6c3fc5;padding:14px 20px;margin-bottom:20px;border-radius:0 8px 8px 0;}
+.declaration p{font-size:13px;color:#333;line-height:1.7;}
+.declaration strong{color:#6c3fc5;}
+
+/* SHEET NUMBER + GOAL */
+.sheet-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.sheet-num{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:2px;color:#aaa;}
+.sheet-goal{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:2px;color:#6c3fc5;font-weight:700;}
+
+/* SIGNATURE TABLE */
+table{width:100%;border-collapse:collapse;}
+thead tr{background:#6c3fc5;}
+thead th{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:2px;color:#fff;padding:8px 10px;text-align:left;font-weight:400;}
+tbody tr{border-bottom:1px solid #e8e8e8;}
+tbody tr:nth-child(even){background:#fafafa;}
+tbody td{padding:0;height:28px;vertical-align:middle;}
+.num-cell{font-family:'Courier Prime',monospace;font-size:10px;color:#ccc;padding:0 10px;width:32px;}
+.sig-cell{border-right:1px solid #eee;padding:0 8px;width:35%;}
+.age-cell{border-right:1px solid #eee;padding:0 8px;width:10%;}
+.loc-cell{border-right:1px solid #eee;padding:0 8px;width:30%;}
+.date-cell{padding:0 8px;width:15%;}
+
+/* FOOTER */
+.sheet-footer{margin-top:20px;border-top:2px solid #6c3fc5;padding-top:12px;display:flex;justify-content:space-between;align-items:center;}
+.sheet-footer-left{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:2px;color:#aaa;line-height:1.6;}
+.sheet-footer-right{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:2px;color:#6c3fc5;text-align:right;}
+
+/* PRINT */
+@media print {
+  body{background:#fff;padding:0;}
+  .screen-only{display:none;}
+  .sheet{margin:0;border:none;border-radius:0;padding:32px 40px;box-shadow:none;page-break-after:always;}
+}
+</style>
+</head>
+<body>
+
+<!-- SCREEN INSTRUCTIONS -->
+<div class="screen-only">
+  <h2>✍️ O.V.E.R PHYSICAL PETITION</h2>
+  <p>Print this page and bring it to school. Each sheet holds <strong>20 signatures</strong>. Fill up a sheet, get another, keep going until you hit <strong>1,000 names</strong>. Then bring the stack to your principal, the news, or a sponsor.</p>
+  <button class="print-btn" onclick="window.print()">🖨️ PRINT PETITION SHEETS</button>
+  <p class="tip">// TIP: PRINT MULTIPLE COPIES — 1 SHEET = 20 SIGNATURES — 50 SHEETS = 1,000</p>
+</div>
+
+<!-- PETITION SHEETS (repeating) -->
+<div id="sheets"></div>
+
+<script>
+const SIGS_PER_SHEET = 20;
+const TOTAL_SIGS = 1000;
+const SHEETS = TOTAL_SIGS / SIGS_PER_SHEET; // 50 sheets
+
+const container = document.getElementById('sheets');
+
+for(let s = 0; s < SHEETS; s++) {
+  const startNum = s * SIGS_PER_SHEET + 1;
+  const endNum = startNum + SIGS_PER_SHEET - 1;
+
+  let rows = '';
+  for(let i = startNum; i <= endNum; i++) {
+    rows += `<tr>
+      <td class="num-cell">${i}</td>
+      <td class="sig-cell"></td>
+      <td class="age-cell"></td>
+      <td class="loc-cell"></td>
+      <td class="date-cell"></td>
+    </tr>`;
+  }
+
+  container.innerHTML += `
+  <div class="sheet">
+    <div class="sheet-header">
+      <div class="sheet-logo"><img src="logo.jpg" alt="O.V.E.R"></div>
+      <div class="sheet-header-text">
+        <div class="sheet-title">
+          <span class="o">O</span><span class="dot">.</span><span class="v">V</span><span class="dot">.</span><span class="e">E</span><span class="dot">.</span><span class="r">R</span>
+        </div>
+        <div class="sheet-subtitle">OLIVER VO'S EMPOWERING REAL DISABLED KIDS · FOUNDED 2026 · LADERA RANCH, CA</div>
+        <div class="sheet-tagline">We stand beside disabled kids — everywhere, always.</div>
+      </div>
+    </div>
+
+    <div class="declaration">
+      <p><strong>DECLARATION:</strong> "I am joining O.V.E.R — Oliver Vo's worldwide movement to end the ridicule of disabled kids. I believe disabled people deserve respect, belonging, and a world that stands up for them. By signing below, I declare myself a member of this movement."</p>
+    </div>
+
+    <div class="sheet-meta">
+      <span class="sheet-num">SHEET ${s+1} OF 50 &nbsp;·&nbsp; SIGNATURES ${startNum}–${endNum}</span>
+      <span class="sheet-goal">GOAL: 1,000 SIGNATURES</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>FULL NAME (print clearly)</th>
+          <th>AGE</th>
+          <th>CITY &amp; STATE / SCHOOL</th>
+          <th>DATE</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+
+    <div class="sheet-footer">
+      <div class="sheet-footer-left">
+        O.V.E.R — oliveryvo-cmd.github.io/over<br>
+        Founded by Oliver Vo, Age 10 · Ladera Ranch, CA · 2026
+      </div>
+      <div class="sheet-footer-right">
+        SHEET ${s+1} / 50<br>
+        RETURN TO OLIVER VO WHEN FULL
+      </div>
+    </div>
+  </div>`;
+}
+</script>
+</body>
+</html>
