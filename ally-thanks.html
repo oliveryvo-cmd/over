@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Welcome, O.V.E.R Ally!</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Nunito:wght@400;700;900&family=Courier+Prime&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#060c1a;--purple:#6c3fc5;--purple2:#8b5cf6;--teal:#0ea5a0;--green:#22c55e;--gold:#f59e0b;--white:#f8faff;--silver:#a0a8b8;}
+body{background:var(--navy);color:var(--white);font-family:'Nunito',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;}
+.icon{font-size:100px;margin-bottom:24px;filter:drop-shadow(0 0 40px rgba(34,197,94,0.7));animation:pulse 2s ease-in-out infinite;display:block;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+.badge{background:rgba(34,197,94,0.1);border:1px solid var(--green);padding:6px 28px;border-radius:100px;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:4px;color:var(--green);margin-bottom:24px;display:inline-block;}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(32px,8vw,80px);letter-spacing:5px;margin-bottom:12px;}
+h1 span{color:var(--green);}
+.sub{font-size:17px;color:var(--silver);margin-bottom:48px;max-width:560px;line-height:1.7;}
+
+/* ALLY CARD */
+.card{background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(14,165,160,0.05));border:2px solid rgba(34,197,94,0.4);border-radius:20px;padding:40px;max-width:440px;width:100%;margin:0 auto 40px;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,0.15),transparent 70%);}
+
+.card-logo-img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid rgba(34,197,94,0.5);margin:0 auto 16px;display:block;}
+.card-title{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:5px;color:var(--green);margin-bottom:4px;}
+.card-name-line{font-family:'Oswald',sans-serif;font-size:28px;letter-spacing:3px;margin-bottom:4px;}
+.card-sub-line{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;color:#333;margin-bottom:20px;}
+.card-divider{border:none;border-top:1px solid #0f1520;margin:16px 0;}
+.card-status{font-family:'Oswald',sans-serif;font-size:22px;letter-spacing:3px;color:var(--green);margin-bottom:8px;}
+.card-pledge-line{font-size:13px;color:var(--silver);line-height:1.7;font-style:italic;margin-bottom:20px;}
+.card-fields{display:flex;flex-direction:column;gap:8px;text-align:left;}
+.card-field{font-size:12px;color:#555;font-family:'Courier Prime',monospace;letter-spacing:1px;}
+.card-field span{color:var(--white);font-weight:700;}
+.card-seal{display:inline-block;margin-top:20px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:100px;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;color:var(--green);padding:6px 20px;}
+
+.print-btn{background:linear-gradient(135deg,var(--green),var(--teal));border:none;padding:16px 40px;font-family:'Oswald',sans-serif;font-size:18px;letter-spacing:3px;color:#000;cursor:pointer;font-weight:700;border-radius:8px;display:block;width:100%;max-width:400px;margin:0 auto 16px;transition:opacity .2s;}
+.print-btn:hover{opacity:0.85;}
+.back{color:var(--green);font-weight:700;font-size:15px;text-decoration:none;letter-spacing:1px;border-bottom:1px solid var(--green);padding-bottom:2px;}
+
+@media print{
+  body{background:#fff;color:#000;}
+  .icon,.badge,h1,.sub,.print-btn,.back{display:none;}
+  .card{border-color:#000;background:#fff;color:#000;box-shadow:none;}
+  .card::before{display:none;}
+  .card-status{color:#000;}
+  .card-field span{color:#000;}
+  .card-seal{border-color:#000;color:#000;}
+  .card-title{color:#000;}
+  .card-pledge-line{color:#555;}
+}
+</style>
+</head>
+<body>
+
+<span class="icon">✊</span>
+<div class="badge">✅ ALLY PLEDGE ACCEPTED — WELCOME TO THE MOVEMENT</div>
+<h1>YOU'RE AN <span>ALLY.</span></h1>
+<p class="sub">You just made a promise to stand beside disabled kids. That matters more than you know. Print your Ally Card and wear it with pride.</p>
+
+<div class="card">
+  <img src="logo.jpg" alt="O.V.E.R" class="card-logo-img">
+  <div class="card-title">O.V.E.R — OFFICIAL ALLY CARD</div>
+  <div class="card-sub-line">// OLIVER VO'S EMPOWERING REAL DISABLED KIDS</div>
+  <hr class="card-divider">
+  <div class="card-status">✊ CERTIFIED ALLY</div>
+  <p class="card-pledge-line">"I pledge to never mock, never stay silent, and always stand beside disabled kids."</p>
+  <div class="card-fields">
+    <div class="card-field">DATE SIGNED: <span id="joinDate"></span></div>
+    <div class="card-field">STATUS: <span>O.V.E.R ALLY 🌍</span></div>
+    <div class="card-field">AUTHORIZED BY: <span>Oliver Vo, Founder</span></div>
+  </div>
+  <div class="card-seal">✅ PLEDGE OFFICIALLY ACCEPTED</div>
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ PRINT YOUR ALLY CARD</button>
+<a href="index.html" class="back">← BACK TO O.V.E.R</a>
+
+<script>
+document.getElementById('joinDate').textContent = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+</script>
+</body>
+</html>

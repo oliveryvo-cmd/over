@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Become an O.V.E.R Ally — Stand With Disabled Kids</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Courier+Prime:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#060c1a;--navy2:#0a1628;--purple:#6c3fc5;--purple2:#8b5cf6;
+  --teal:#0ea5a0;--teal2:#14b8b3;--gold:#f59e0b;--green:#22c55e;
+  --white:#f8faff;--silver:#a0a8b8;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--white);font-family:'Nunito',sans-serif;min-height:100vh;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--green),var(--teal));}
+
+/* NAV */
+nav{background:rgba(6,12,26,0.97);border-bottom:4px solid transparent;border-image:linear-gradient(90deg,var(--purple),var(--teal),var(--gold)) 1;padding:0 40px;display:flex;align-items:center;gap:20px;height:76px;}
+.nav-logo-seal{width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid rgba(108,63,197,0.5);flex-shrink:0;}
+.nav-logo-seal img{width:100%;height:100%;object-fit:cover;}
+.nav-brand{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:4px;}
+.nav-brand .o{color:var(--purple2);}.nav-brand .v{color:var(--teal2);}.nav-brand .e{color:var(--gold);}.nav-brand .r{color:#ec4899;}.nav-brand .dot{color:#555;}
+.nav-back{margin-left:auto;background:rgba(34,197,94,0.15);border:1px solid var(--green);color:var(--green);padding:10px 24px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;text-decoration:none;border-radius:4px;transition:background .2s;}
+.nav-back:hover{background:rgba(34,197,94,0.25);}
+
+/* HERO */
+.hero{background:radial-gradient(ellipse at 30% 50%,rgba(34,197,94,0.2),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(14,165,160,0.2),transparent 60%),var(--navy);padding:80px 20px 60px;text-align:center;}
+.hero-logo{font-size:100px;margin-bottom:16px;filter:drop-shadow(0 0 40px rgba(34,197,94,0.6));display:block;}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(34,197,94,0.1);border:1px solid var(--green);padding:8px 24px;border-radius:100px;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:3px;color:var(--green);margin-bottom:24px;}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(36px,8vw,80px);font-weight:700;letter-spacing:4px;margin-bottom:16px;line-height:1;}
+h1 span{background:linear-gradient(135deg,var(--green),var(--teal2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--silver);max-width:640px;margin:0 auto 48px;line-height:1.7;}
+
+/* WHAT IS AN ALLY */
+.what-ally{background:var(--navy2);padding:80px 40px;border-top:1px solid #0f1520;border-bottom:1px solid #0f1520;}
+.container{max-width:900px;margin:0 auto;}
+.section-eyebrow{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:5px;color:var(--green);margin-bottom:16px;display:block;}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:3px;margin-bottom:16px;}
+.section-line{width:80px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--green),var(--teal));margin-bottom:40px;}
+
+.pledge-list{display:flex;flex-direction:column;gap:20px;margin-bottom:48px;}
+.pledge-item{display:flex;align-items:flex-start;gap:20px;background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.2);border-radius:16px;padding:24px;}
+.pledge-num{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:var(--green);opacity:0.4;flex-shrink:0;line-height:1;}
+.pledge-text h4{font-family:'Oswald',sans-serif;font-size:20px;letter-spacing:2px;color:var(--white);margin-bottom:6px;}
+.pledge-text p{font-size:15px;color:var(--silver);line-height:1.7;}
+
+/* FORM */
+.form-section{padding:80px 40px;}
+.form-card{background:var(--navy2);border:2px solid rgba(34,197,94,0.3);border-radius:20px;padding:48px 40px;max-width:680px;margin:0 auto;}
+.form-card h2{font-family:'Oswald',sans-serif;font-size:32px;letter-spacing:3px;margin-bottom:8px;text-align:center;}
+.form-card p{color:var(--silver);text-align:center;margin-bottom:40px;line-height:1.7;}
+
+.form-group{margin-bottom:24px;}
+.form-group label{display:block;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:var(--green);margin-bottom:8px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid #1a2540;border-radius:8px;padding:14px 18px;color:var(--white);font-family:'Nunito',sans-serif;font-size:15px;outline:none;transition:border-color .2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green);}
+.form-group select option{background:#0a1628;}
+.form-group textarea{resize:vertical;min-height:100px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+.pledge-box{background:rgba(34,197,94,0.05);border:2px solid rgba(34,197,94,0.3);border-radius:12px;padding:24px;margin-bottom:28px;font-size:15px;color:var(--silver);line-height:1.8;}
+.pledge-box strong{color:var(--white);}
+
+.pledge-check{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;cursor:pointer;}
+.pledge-check input[type=checkbox]{width:22px;height:22px;margin-top:2px;accent-color:var(--green);flex-shrink:0;cursor:pointer;}
+.pledge-check span{font-size:14px;color:var(--silver);line-height:1.7;}
+
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--green),var(--teal));border:none;padding:20px;font-family:'Oswald',sans-serif;font-size:22px;letter-spacing:4px;color:#000;font-weight:700;border-radius:8px;cursor:pointer;transition:all .2s;box-shadow:0 8px 32px rgba(34,197,94,0.3);}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 12px 48px rgba(34,197,94,0.5);}
+.submit-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+
+/* WHAT HAPPENS NEXT */
+.next-steps{background:var(--navy2);padding:60px 40px;border-top:1px solid #0f1520;}
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+.next-card{background:var(--navy);border:1px solid #0f1520;border-radius:16px;padding:28px 24px;text-align:center;}
+.next-icon{font-size:48px;margin-bottom:16px;display:block;}
+.next-card h4{font-family:'Oswald',sans-serif;font-size:18px;letter-spacing:2px;margin-bottom:8px;color:var(--green);}
+.next-card p{font-size:13px;color:var(--silver);line-height:1.7;}
+
+footer{padding:40px;text-align:center;border-top:1px solid #0f1520;}
+footer p{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:#333;}
+footer a{color:var(--green);text-decoration:none;}
+
+@media(max-width:640px){
+  .form-row{grid-template-columns:1fr;}
+  .next-grid{grid-template-columns:1fr;}
+  .form-card{padding:32px 24px;}
+  nav{padding:0 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo-seal"><img src="logo.jpg" alt="O.V.E.R"></div>
+  <div class="nav-brand">
+    <span class="o">O</span><span class="dot">.</span><span class="v">V</span><span class="dot">.</span><span class="e">E</span><span class="dot">.</span><span class="r">R</span>
+  </div>
+  <a href="index.html" class="nav-back">← BACK TO O.V.E.R</a>
+</nav>
+
+<div class="hero">
+  <span class="hero-logo">✊</span>
+  <div class="hero-badge">ALLY MEMBERSHIP — NOW OPEN</div>
+  <h1>BECOME AN<br><span>O.V.E.R ALLY</span></h1>
+  <p class="hero-sub">You don't have to be disabled to stand up for disabled kids. Allies are the kids who refuse to stay silent — who speak up, stand beside, and help change the world.</p>
+</div>
+
+<div class="what-ally">
+  <div class="container">
+    <span class="section-eyebrow">// WHAT IT MEANS</span>
+    <h2 class="section-title">THE ALLY PLEDGE</h2>
+    <div class="section-line"></div>
+    <div class="pledge-list">
+      <div class="pledge-item">
+        <div class="pledge-num">01</div>
+        <div class="pledge-text">
+          <h4>I WILL NEVER MOCK</h4>
+          <p>I promise I will never make fun of, imitate, or laugh at a disabled person — not in person, not online, not ever.</p>
+        </div>
+      </div>
+      <div class="pledge-item">
+        <div class="pledge-num">02</div>
+        <div class="pledge-text">
+          <h4>I WILL SPEAK UP</h4>
+          <p>When I see someone ridiculing a disabled kid, I won't stay quiet. I will speak up, step in, or get an adult — even if it's hard.</p>
+        </div>
+      </div>
+      <div class="pledge-item">
+        <div class="pledge-num">03</div>
+        <div class="pledge-text">
+          <h4>I WILL STAND BESIDE</h4>
+          <p>I will treat disabled kids the same way I want to be treated — as real people who are just as worthy of respect, friendship, and belonging.</p>
+        </div>
+      </div>
+      <div class="pledge-item">
+        <div class="pledge-num">04</div>
+        <div class="pledge-text">
+          <h4>I WILL HELP GROW THIS</h4>
+          <p>I will tell other kids about O.V.E.R. The more allies we have, the safer the world gets for disabled kids everywhere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-section">
+  <div class="form-card">
+    <h2>✊ SIGN THE PLEDGE</h2>
+    <p>Fill out the form below to become an official O.V.E.R Ally. You'll receive an Ally Card and your name goes on the O.V.E.R Ally Wall.</p>
+
+    <form action="https://formsubmit.co/troungnvo@icloud.com" method="POST">
+      <input type="hidden" name="_subject" value="NEW O.V.E.R ALLY SIGN-UP">
+      <input type="hidden" name="_next" value="ally-thanks.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="type" value="ALLY MEMBER">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>FIRST NAME *</label>
+          <input type="text" name="first_name" required placeholder="Your first name">
+        </div>
+        <div class="form-group">
+          <label>LAST NAME *</label>
+          <input type="text" name="last_name" required placeholder="Your last name">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>AGE *</label>
+        <select name="age" required>
+          <option value="">Select your age</option>
+          <option>Under 8</option>
+          <option>8</option><option>9</option><option>10</option><option>11</option>
+          <option>12</option><option>13</option><option>14</option><option>15</option>
+          <option>16</option><option>17</option><option>18+</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>CITY &amp; STATE / COUNTRY *</label>
+        <input type="text" name="location" required placeholder="e.g. Ladera Ranch, CA">
+      </div>
+
+      <div class="form-group">
+        <label>SCHOOL NAME (optional)</label>
+        <input type="text" name="school" placeholder="Your school name">
+      </div>
+
+      <div class="form-group">
+        <label>PARENT / GUARDIAN EMAIL *</label>
+        <input type="email" name="email" required placeholder="parent@email.com">
+      </div>
+
+      <div class="form-group">
+        <label>WHY DO YOU WANT TO BE AN ALLY? (optional)</label>
+        <textarea name="why" placeholder="Tell us in your own words..."></textarea>
+      </div>
+
+      <div class="pledge-box">
+        <strong>THE OFFICIAL O.V.E.R ALLY PLEDGE:</strong><br><br>
+        "I pledge to never mock, make fun of, or ridiculue a disabled person. I will speak up when I see it happen. I will stand beside disabled kids as a true ally — in school, online, and everywhere. I join O.V.E.R because I believe disabled kids deserve respect, belonging, and a world that stands up for them."
+      </div>
+
+      <label class="pledge-check">
+        <input type="checkbox" name="pledge_accepted" value="yes" required>
+        <span>I have read and I accept the O.V.E.R Ally Pledge above. I am signing this with my full name as my word. <strong style="color:var(--white)">*</strong></span>
+      </label>
+
+      <button type="submit" class="submit-btn">✊ SIGN THE PLEDGE &amp; BECOME AN ALLY</button>
+    </form>
+  </div>
+</div>
+
+<div class="next-steps">
+  <div class="container">
+    <span class="section-eyebrow">// WHAT HAPPENS NEXT</span>
+    <h2 class="section-title" style="font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:3px;margin-bottom:16px;">AFTER YOU SIGN</h2>
+    <div class="section-line"></div>
+    <div class="next-grid">
+      <div class="next-card">
+        <span class="next-icon">🃏</span>
+        <h4>GET YOUR ALLY CARD</h4>
+        <p>Print your official O.V.E.R Ally membership card — proof that you stood up when it mattered.</p>
+      </div>
+      <div class="next-card">
+        <span class="next-icon">🏛️</span>
+        <h4>GO ON THE ALLY WALL</h4>
+        <p>Your name goes on the O.V.E.R Ally Wall — posted at your school and on our worldwide website.</p>
+      </div>
+      <div class="next-card">
+        <span class="next-icon">🌍</span>
+        <h4>SPREAD THE MOVEMENT</h4>
+        <p>Tell your friends, your class, your whole school. Every new ally makes the world safer for disabled kids.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>O.V.E.R — OLIVER VO'S EMPOWERING REAL DISABLED KIDS &nbsp;|&nbsp; <a href="index.html">BACK TO MAIN SITE</a></p>
+</footer>
+
+</body>
+</html>
