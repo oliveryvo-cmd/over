@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Our Story — O.V.E.R</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Courier+Prime:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#060c1a;--navy2:#0a1628;--purple:#6c3fc5;--purple2:#8b5cf6;--teal:#0ea5a0;--teal2:#14b8b3;--gold:#f59e0b;--green:#22c55e;--white:#f8faff;--silver:#a0a8b8;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--white);font-family:'Nunito',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--purple),var(--teal));}
+
+nav{background:rgba(6,12,26,0.97);border-bottom:4px solid transparent;border-image:linear-gradient(90deg,var(--purple),var(--teal),var(--gold)) 1;padding:0 40px;display:flex;align-items:center;gap:16px;height:76px;position:sticky;top:0;z-index:100;}
+.nav-seal{width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid rgba(108,63,197,0.5);flex-shrink:0;}
+.nav-seal img{width:100%;height:100%;object-fit:cover;}
+.nav-brand{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:4px;}
+.nav-brand .o{color:var(--purple2);}.nav-brand .v{color:var(--teal2);}.nav-brand .e{color:var(--gold);}.nav-brand .r{color:#ec4899;}.nav-brand .dot{color:#555;}
+.nav-back{margin-left:auto;background:rgba(108,63,197,0.15);border:1px solid var(--purple2);color:var(--purple2);padding:10px 24px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;text-decoration:none;border-radius:4px;}
+.nav-back:hover{background:rgba(108,63,197,0.25);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(108,63,197,0.35),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(14,165,160,0.25),transparent 60%),var(--navy);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(108,63,197,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(108,63,197,0.05) 1px,transparent 1px);background-size:40px 40px;}
+.hero-content{position:relative;z-index:2;}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(108,63,197,0.15);border:1px solid var(--purple2);padding:8px 24px;border-radius:100px;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:3px;color:var(--purple2);margin-bottom:32px;}
+.hero-logo{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid rgba(108,63,197,0.5);filter:drop-shadow(0 0 60px rgba(108,63,197,0.7));margin-bottom:32px;}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(48px,10vw,120px);font-weight:700;letter-spacing:6px;line-height:0.9;margin-bottom:24px;}
+h1 .line1{display:block;color:var(--white);}
+h1 .line2{display:block;background:linear-gradient(135deg,var(--purple2),var(--teal2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+h1 .line3{display:block;color:var(--gold);}
+.hero-sub{font-size:clamp(18px,2.5vw,24px);color:var(--silver);max-width:700px;margin:0 auto;line-height:1.7;}
+.hero-sub strong{color:var(--white);}
+
+/* STORY SECTIONS */
+.story{padding:100px 40px;}
+.container{max-width:860px;margin:0 auto;}
+
+.chapter{margin-bottom:100px;}
+.chapter-eyebrow{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:5px;color:var(--purple2);margin-bottom:16px;display:block;}
+.chapter-title{font-family:'Oswald',sans-serif;font-size:clamp(32px,5vw,60px);font-weight:700;letter-spacing:3px;margin-bottom:24px;line-height:1.1;}
+.chapter-line{width:80px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--purple),var(--teal));margin-bottom:40px;}
+.chapter-body{font-size:clamp(17px,2vw,20px);color:var(--silver);line-height:1.9;}
+.chapter-body p{margin-bottom:24px;}
+.chapter-body p:last-child{margin-bottom:0;}
+.chapter-body strong{color:var(--white);}
+.chapter-body em{color:var(--purple2);font-style:normal;font-weight:700;}
+
+/* PULL QUOTE */
+.pull-quote{background:linear-gradient(135deg,rgba(108,63,197,0.12),rgba(14,165,160,0.08));border-left:6px solid var(--purple2);border-radius:0 16px 16px 0;padding:36px 40px;margin:60px 0;position:relative;}
+.pull-quote::before{content:'"';font-family:'Oswald',sans-serif;font-size:120px;color:rgba(108,63,197,0.15);position:absolute;top:-20px;left:20px;line-height:1;}
+.pull-quote p{font-family:'Oswald',sans-serif;font-size:clamp(22px,3vw,32px);letter-spacing:1px;color:var(--white);line-height:1.5;position:relative;z-index:1;}
+.pull-quote cite{display:block;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:var(--purple2);margin-top:16px;}
+
+/* RISE UP SECTION */
+.rise{background:linear-gradient(135deg,rgba(108,63,197,0.15),rgba(14,165,160,0.1));border:2px solid rgba(108,63,197,0.3);border-radius:24px;padding:72px 60px;text-align:center;margin:80px 0;}
+.rise-title{font-family:'Oswald',sans-serif;font-size:clamp(48px,8vw,100px);font-weight:700;letter-spacing:6px;line-height:0.9;margin-bottom:32px;}
+.rise-title .word1{display:block;color:var(--purple2);}
+.rise-title .word2{display:block;color:var(--teal2);}
+.rise-title .word3{display:block;color:var(--gold);}
+.rise-title .word4{display:block;color:var(--green);}
+.rise-body{font-size:clamp(17px,2vw,21px);color:var(--silver);max-width:640px;margin:0 auto 48px;line-height:1.8;}
+.rise-body strong{color:var(--white);}
+.rise-btn{background:linear-gradient(135deg,var(--purple),var(--teal));color:#fff;padding:20px 56px;font-family:'Oswald',sans-serif;font-size:22px;letter-spacing:4px;font-weight:700;text-decoration:none;border-radius:8px;display:inline-block;transition:all .2s;box-shadow:0 8px 32px rgba(108,63,197,0.4);}
+.rise-btn:hover{transform:translateY(-3px);box-shadow:0 12px 48px rgba(108,63,197,0.6);}
+
+/* OLIVER SECTION */
+.oliver-section{margin-bottom:80px;}
+.oliver-card{background:var(--navy2);border:1px solid #0f1520;border-radius:20px;padding:48px;display:flex;gap:40px;align-items:center;}
+.oliver-avatar{width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,rgba(108,63,197,0.3),rgba(14,165,160,0.2));border:3px solid rgba(108,63,197,0.4);display:flex;align-items:center;justify-content:center;font-size:64px;flex-shrink:0;}
+.oliver-info h3{font-family:'Oswald',sans-serif;font-size:32px;letter-spacing:3px;margin-bottom:4px;}
+.oliver-info h3 span{color:var(--gold);}
+.oliver-info .sub{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:var(--purple2);margin-bottom:16px;display:block;}
+.oliver-info p{font-size:16px;color:var(--silver);line-height:1.8;}
+
+/* FOOTER CTA */
+.footer-cta{text-align:center;padding:80px 40px;border-top:1px solid #0f1520;}
+.footer-cta h2{font-family:'Oswald',sans-serif;font-size:clamp(32px,6vw,64px);letter-spacing:4px;margin-bottom:20px;line-height:1.1;}
+.footer-cta h2 span{background:linear-gradient(135deg,var(--purple2),var(--teal2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.footer-cta p{font-size:18px;color:var(--silver);max-width:580px;margin:0 auto 40px;line-height:1.7;}
+.cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.cta-btn{padding:18px 40px;font-family:'Oswald',sans-serif;font-size:18px;letter-spacing:3px;font-weight:700;border-radius:8px;text-decoration:none;transition:all .2s;display:inline-block;}
+.cta-btn:hover{transform:translateY(-3px);}
+.cta-1{background:linear-gradient(135deg,var(--purple),var(--teal));color:#fff;box-shadow:0 8px 32px rgba(108,63,197,0.4);}
+.cta-2{background:linear-gradient(135deg,var(--green),var(--teal));color:#000;}
+
+footer{padding:32px;text-align:center;border-top:1px solid #0f1520;}
+footer a{color:var(--purple2);text-decoration:none;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;}
+
+@media(max-width:700px){.oliver-card{flex-direction:column;text-align:center;padding:32px 24px;}.rise{padding:48px 24px;}.story{padding:60px 20px;}nav{padding:0 20px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-seal"><img src="logo.jpg" alt="O.V.E.R"></div>
+  <div class="nav-brand"><span class="o">O</span><span class="dot">.</span><span class="v">V</span><span class="dot">.</span><span class="e">E</span><span class="dot">.</span><span class="r">R</span></div>
+  <a href="index.html" class="nav-back">← BACK TO O.V.E.R</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">// THE STORY BEHIND THE MOVEMENT</div>
+    <img src="logo.jpg" alt="O.V.E.R" class="hero-logo">
+    <h1>
+      <span class="line1">DISABLED KIDS</span>
+      <span class="line2">RISE UP.</span>
+      <span class="line3">CHANGE ALL.</span>
+    </h1>
+    <p class="hero-sub">This is the story of why O.V.E.R exists — and why a <strong>10 year old kid</strong> decided to build a worldwide movement instead of waiting for someone else to do it.</p>
+  </div>
+</div>
+
+<!-- STORY -->
+<div class="story">
+  <div class="container">
+
+    <!-- CHAPTER 1 -->
+    <div class="chapter">
+      <span class="chapter-eyebrow">// CHAPTER ONE</span>
+      <h2 class="chapter-title">DISABLED KIDS MATTER.</h2>
+      <div class="chapter-line"></div>
+      <div class="chapter-body">
+        <p>Disabled kids wake up every day knowing the world doesn't always treat them the same as everyone else. They walk into schools, onto playgrounds, into classrooms — and sometimes the world makes them feel like they are <strong>less than</strong>. Less important. Less worthy. Less deserving of respect.</p>
+        <p>That is wrong. And <em>Oliver Vo</em> decided he wasn't going to just accept it.</p>
+        <p>Oliver has <strong>Tourette syndrome</strong>. He knows what it's like to be different. He knows what it's like to have a body that sometimes does things you can't control. And he knows that disabled kids — no matter what their disability is — deserve to feel like they matter. Like they belong. Like the world is on their side.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>I didn't build O.V.E.R because someone told me to. I built it because I looked around and decided disabled kids should feel like they matter — and nobody else was doing it the way it needed to be done.</p>
+      <cite>— OLIVER VO, FOUNDER OF O.V.E.R, AGE 10</cite>
+    </div>
+
+    <!-- CHAPTER 2 -->
+    <div class="chapter">
+      <span class="chapter-eyebrow">// CHAPTER TWO</span>
+      <h2 class="chapter-title">THE DECISION.</h2>
+      <div class="chapter-line"></div>
+      <div class="chapter-body">
+        <p>Most people see a problem and wait. They wait for a teacher to fix it. They wait for a law to change. They wait for someone older, bigger, or more important to step up.</p>
+        <p><em>Oliver didn't wait.</em></p>
+        <p>At 10 years old, living in Ladera Ranch, California, Oliver sat down and decided to build something real. Not a school project. Not a poster for the hallway. A <strong>worldwide movement</strong> — with a website, care packages, school programs, an ally pledge, and a goal to reach every disabled kid on earth who needs to hear that they are not alone.</p>
+        <p>He called it <strong>O.V.E.R — Oliver Vo's Empowering Real Disabled Kids</strong>. Because that's exactly what it does.</p>
+      </div>
+    </div>
+
+    <!-- CHAPTER 3 -->
+    <div class="chapter">
+      <span class="chapter-eyebrow">// CHAPTER THREE</span>
+      <h2 class="chapter-title">WHAT O.V.E.R DOES.</h2>
+      <div class="chapter-line"></div>
+      <div class="chapter-body">
+        <p>O.V.E.R sends <strong>care packages</strong> to disabled kids around the world — filled with a personal letter, an official membership card, a power journal, O.V.E.R gear, and the simple, powerful message: <em>you matter.</em></p>
+        <p>O.V.E.R enters <strong>schools</strong> and runs assemblies that change how every student treats disabled kids — permanently. Students take the <strong>Ally Pledge</strong>, promising to never mock, never stay silent, and always stand beside disabled kids.</p>
+        <p>O.V.E.R puts disabled kids in the <strong>spotlight</strong> — telling their stories to the world and showing everyone what disabled kids are capable of when the world gets out of their way.</p>
+        <p>And O.V.E.R is just getting started.</p>
+      </div>
+    </div>
+
+    <!-- RISE UP -->
+    <div class="rise">
+      <div class="rise-title">
+        <span class="word1">DISABLED</span>
+        <span class="word2">KIDS</span>
+        <span class="word3">RISE</span>
+        <span class="word4">UP.</span>
+      </div>
+      <p class="rise-body">This is not a charity. This is not pity. This is a <strong>movement</strong>. Disabled kids are not less — they are powerful, capable, and world-changing. O.V.E.R exists to make sure every disabled kid on earth knows that. And to make sure the world knows it too.</p>
+      <a href="join.html" class="rise-btn">✊ JOIN THE MOVEMENT</a>
+    </div>
+
+    <!-- WHO IS OLIVER -->
+    <div class="oliver-section">
+      <span class="chapter-eyebrow">// THE FOUNDER</span>
+      <h2 class="chapter-title">WHO IS OLIVER?</h2>
+      <div class="chapter-line"></div>
+      <div class="oliver-card">
+        <div class="oliver-avatar">⚡</div>
+        <div class="oliver-info">
+          <h3>OLIVER <span>VO</span></h3>
+          <span class="sub">// AGE 10 · LADERA RANCH, CA · TOURETTE SYNDROME · FOUNDER OF O.V.E.R WORLDWIDE</span>
+          <p>Oliver Vo is 10 years old. He has Tourette syndrome. He lives in Ladera Ranch, California. He is not waiting until he's older, bigger, or more experienced. He is doing it now — because disabled kids need someone in their corner <em>right now</em>, not someday. O.V.E.R is his answer to a world that wasn't doing enough.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <h2>THIS MOVEMENT<br><span>NEEDS YOU.</span></h2>
+  <p>Whether you're disabled or not — you have a role in this. Sign the petition. Become an ally. Get a care package. Spread the word. Every single person who joins makes this more real.</p>
+  <div class="cta-row">
+    <a class="cta-btn cta-1" href="join.html">✊ JOIN O.V.E.R</a>
+    <a class="cta-btn cta-2" href="ally.html">💚 BECOME AN ALLY</a>
+  </div>
+</div>
+
+<footer><a href="index.html">← BACK TO O.V.E.R MAIN SITE</a></footer>
+
+</body>
+</html>
