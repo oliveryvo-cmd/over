@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Join O.V.E.R — Sign the Movement Petition</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Courier+Prime:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#060c1a;--navy2:#0a1628;--purple:#6c3fc5;--purple2:#8b5cf6;--teal:#0ea5a0;--teal2:#14b8b3;--gold:#f59e0b;--green:#22c55e;--white:#f8faff;--silver:#a0a8b8;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--white);font-family:'Nunito',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--purple),var(--teal));}
+
+nav{background:rgba(6,12,26,0.97);border-bottom:4px solid transparent;border-image:linear-gradient(90deg,var(--purple),var(--teal),var(--gold)) 1;padding:0 40px;display:flex;align-items:center;gap:16px;height:76px;position:sticky;top:0;z-index:100;}
+.nav-seal{width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid rgba(108,63,197,0.5);flex-shrink:0;}
+.nav-seal img{width:100%;height:100%;object-fit:cover;}
+.nav-brand{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:4px;}
+.nav-brand .o{color:var(--purple2);}.nav-brand .v{color:var(--teal2);}.nav-brand .e{color:var(--gold);}.nav-brand .r{color:#ec4899;}.nav-brand .dot{color:#555;}
+.nav-back{margin-left:auto;background:rgba(108,63,197,0.15);border:1px solid var(--purple2);color:var(--purple2);padding:10px 24px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;text-decoration:none;border-radius:4px;}
+.nav-back:hover{background:rgba(108,63,197,0.25);}
+
+/* HERO */
+.hero{background:radial-gradient(ellipse at 30% 50%,rgba(108,63,197,0.3),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(14,165,160,0.3),transparent 60%),var(--navy);padding:80px 20px 60px;text-align:center;}
+.hero-icon{font-size:100px;display:block;margin-bottom:16px;filter:drop-shadow(0 0 40px rgba(108,63,197,0.6));animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.06);}}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(108,63,197,0.15);border:1px solid var(--purple2);padding:8px 24px;border-radius:100px;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:3px;color:var(--purple2);margin-bottom:24px;}
+.hero-badge::before{content:'●';color:var(--green);animation:blink 1.5s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(36px,8vw,80px);font-weight:700;letter-spacing:4px;margin-bottom:16px;line-height:1;}
+h1 .o{color:var(--purple2);}h1 .v{color:var(--teal2);}h1 .e{color:var(--gold);}h1 .r{color:#ec4899;}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--silver);max-width:640px;margin:0 auto 48px;line-height:1.7;}
+
+/* COUNTER */
+.counter-wrap{max-width:680px;margin:0 auto 20px;}
+.counter-bar-bg{background:#0f1520;border-radius:100px;height:16px;overflow:hidden;margin-bottom:12px;border:1px solid #1a2540;}
+.counter-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--purple),var(--teal));transition:width 1.5s ease;width:0%;}
+.counter-row{display:flex;justify-content:space-between;align-items:baseline;}
+.counter-num{font-family:'Oswald',sans-serif;font-size:40px;font-weight:700;background:linear-gradient(135deg,var(--purple2),var(--teal2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.counter-goal{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:#555;}
+
+/* MEMBERS */
+.members-section{background:var(--navy2);padding:60px 40px;border-top:1px solid #0f1520;}
+.container{max-width:1000px;margin:0 auto;}
+.section-eyebrow{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:5px;color:var(--purple2);margin-bottom:16px;display:block;}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(24px,4vw,40px);font-weight:700;letter-spacing:3px;margin-bottom:16px;}
+.section-line{width:80px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--purple),var(--teal));margin-bottom:32px;}
+.members-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.member-tag{background:rgba(108,63,197,0.07);border:1px solid rgba(108,63,197,0.2);border-radius:8px;padding:10px 16px;display:flex;flex-direction:column;gap:3px;transition:border-color .2s;}
+.member-tag:hover{border-color:var(--purple2);}
+.member-name{font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:1px;}
+.member-loc{font-family:'Courier Prime',monospace;font-size:10px;color:#444;}
+
+/* FORM */
+.form-section{padding:80px 40px;}
+.form-card{background:var(--navy2);border:2px solid rgba(108,63,197,0.35);border-radius:20px;padding:48px 40px;max-width:680px;margin:0 auto;}
+.form-card h2{font-family:'Oswald',sans-serif;font-size:32px;letter-spacing:3px;margin-bottom:8px;text-align:center;}
+.form-card > p{color:var(--silver);text-align:center;margin-bottom:40px;line-height:1.7;}
+.form-group{margin-bottom:24px;}
+.form-group label{display:block;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:var(--purple2);margin-bottom:8px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid #1a2540;border-radius:8px;padding:14px 18px;color:var(--white);font-family:'Nunito',sans-serif;font-size:15px;outline:none;transition:border-color .2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--purple2);}
+.form-group select option{background:#0a1628;}
+.form-group textarea{resize:vertical;min-height:90px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+.declaration{background:rgba(108,63,197,0.06);border:2px solid rgba(108,63,197,0.25);border-radius:12px;padding:24px;margin-bottom:28px;font-size:15px;color:var(--silver);line-height:1.9;}
+.declaration strong{color:var(--white);}
+
+.agree-check{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;cursor:pointer;}
+.agree-check input[type=checkbox]{width:22px;height:22px;margin-top:2px;accent-color:var(--purple2);flex-shrink:0;cursor:pointer;}
+.agree-check span{font-size:14px;color:var(--silver);line-height:1.7;}
+
+.join-btn{width:100%;background:linear-gradient(135deg,var(--purple),var(--teal));border:none;padding:20px;font-family:'Oswald',sans-serif;font-size:22px;letter-spacing:4px;color:#fff;font-weight:700;border-radius:8px;cursor:pointer;transition:all .2s;box-shadow:0 8px 32px rgba(108,63,197,0.4);}
+.join-btn:hover{transform:translateY(-3px);box-shadow:0 12px 48px rgba(108,63,197,0.6);}
+
+footer{padding:40px;text-align:center;border-top:1px solid #0f1520;}
+footer a{color:var(--purple2);text-decoration:none;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;}
+@media(max-width:600px){.form-row{grid-template-columns:1fr;}.form-card{padding:32px 20px;}nav{padding:0 20px;}.members-section,.form-section{padding:60px 20px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-seal"><img src="logo.jpg" alt="O.V.E.R"></div>
+  <div class="nav-brand"><span class="o">O</span><span class="dot">.</span><span class="v">V</span><span class="dot">.</span><span class="e">E</span><span class="dot">.</span><span class="r">R</span></div>
+  <a href="index.html" class="nav-back">← BACK TO O.V.E.R</a>
+</nav>
+
+<div class="hero">
+  <span class="hero-icon">✊</span>
+  <div class="hero-badge">OFFICIAL MEMBER PETITION — JOIN THE MOVEMENT</div>
+  <h1>I AM <span class="o">O</span><span style="color:#555">.</span><span class="v">V</span><span style="color:#555">.</span><span class="e">E</span><span style="color:#555">.</span><span class="r">R</span></h1>
+  <p class="hero-sub">This is the official O.V.E.R member petition. You sign it, your name goes on the wall, and you become an official part of this movement — disabled or not. Every name counts. Every name matters.</p>
+
+  <div class="counter-wrap">
+    <div class="counter-bar-bg"><div class="counter-bar-fill" id="barFill"></div></div>
+    <div class="counter-row">
+      <span><span class="counter-num" id="memberCount">1</span> <span style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:2px;color:#555;">MEMBERS SIGNED</span></span>
+      <span class="counter-goal">GOAL: 1,000 WORLDWIDE</span>
+    </div>
+  </div>
+</div>
+
+<div class="members-section">
+  <div class="container">
+    <span class="section-eyebrow">// WHO HAS JOINED</span>
+    <h2 class="section-title">CURRENT MEMBERS</h2>
+    <div class="section-line"></div>
+    <div class="members-grid" id="membersGrid"></div>
+  </div>
+</div>
+
+<div class="form-section">
+  <div class="container">
+    <div class="form-card">
+      <h2>✊ SIGN &amp; JOIN O.V.E.R</h2>
+      <p>Fill out the form below. Your name goes on the member wall and you become an official O.V.E.R member — permanently.</p>
+
+      <form action="https://formsubmit.co/troungnvo@icloud.com" method="POST">
+        <input type="hidden" name="_subject" value="NEW O.V.E.R MEMBER PETITION SIGNATURE">
+        <input type="hidden" name="_next" value="join-thanks.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="type" value="MEMBER PETITION">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>FIRST NAME *</label>
+            <input type="text" name="first_name" required placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label>LAST NAME *</label>
+            <input type="text" name="last_name" required placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>AGE *</label>
+          <select name="age" required>
+            <option value="">Select your age</option>
+            <option>Under 8</option>
+            <option>8</option><option>9</option><option>10</option><option>11</option>
+            <option>12</option><option>13</option><option>14</option><option>15</option>
+            <option>16</option><option>17</option><option>18+</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>CITY &amp; STATE / COUNTRY *</label>
+            <input type="text" name="location" required placeholder="e.g. Ladera Ranch, CA">
+          </div>
+          <div class="form-group">
+            <label>ARE YOU DISABLED?</label>
+            <select name="disabled">
+              <option value="">Prefer not to say</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>PARENT / GUARDIAN EMAIL *</label>
+          <input type="email" name="email" required placeholder="parent@email.com">
+        </div>
+        <div class="form-group">
+          <label>WHY ARE YOU JOINING? (optional)</label>
+          <textarea name="why" placeholder="Tell us in your own words..."></textarea>
+        </div>
+
+        <div class="declaration">
+          <strong>THE O.V.E.R MEMBER DECLARATION:</strong><br><br>
+          "I am joining O.V.E.R — Oliver Vo's Empowering Real Disabled Kids. I believe disabled kids deserve respect, belonging, and a world that stands up for them. I declare myself a member of this movement. My name goes on the wall. I am O.V.E.R."
+        </div>
+
+        <label class="agree-check">
+          <input type="checkbox" name="agreed" value="yes" required>
+          <span>I have read the declaration above and I sign my name to it. I am officially joining O.V.E.R. <strong style="color:var(--white)">*</strong></span>
+        </label>
+
+        <button type="submit" class="join-btn">✊ SIGN &amp; JOIN O.V.E.R</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer><a href="index.html">← BACK TO O.V.E.R MAIN SITE</a></footer>
+
+<script>
+const members = [
+  { name: "Oliver Vo", loc: "Ladera Ranch, CA", note: "Founder" },
+];
+const grid = document.getElementById('membersGrid');
+members.forEach(m => {
+  const t = document.createElement('div');
+  t.className = 'member-tag';
+  t.innerHTML = `<div class="member-name">✊ ${m.name}${m.note?' <span style="color:#8b5cf6;font-size:11px;font-family:Courier Prime,monospace">— '+m.note+'</span>':''}</div><div class="member-loc">${m.loc}</div>`;
+  grid.appendChild(t);
+});
+document.getElementById('memberCount').textContent = members.length;
+const pct = Math.min((members.length/1000)*100,100);
+setTimeout(()=>document.getElementById('barFill').style.width=pct+'%',200);
+</script>
+</body>
+</html>

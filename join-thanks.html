@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Welcome to O.V.E.R — You're In!</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Nunito:wght@400;700;900&family=Courier+Prime&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--purple2:#8b5cf6;--teal2:#14b8b3;--gold:#f59e0b;--green:#22c55e;}
+body{background:#060c1a;color:#f8faff;font-family:'Nunito',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;}
+.icon{font-size:100px;margin-bottom:24px;filter:drop-shadow(0 0 40px rgba(108,63,197,0.7));animation:pulse 2s ease-in-out infinite;display:block;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+.badge{background:rgba(139,92,246,0.1);border:1px solid var(--purple2);padding:6px 28px;border-radius:100px;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:4px;color:var(--purple2);margin-bottom:24px;display:inline-block;}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(32px,8vw,80px);letter-spacing:5px;margin-bottom:12px;}
+.o{color:var(--purple2);}.v{color:var(--teal2);}.e{color:var(--gold);}.r{color:#ec4899;}
+.sub{font-size:17px;color:#a0a8b8;margin-bottom:48px;max-width:540px;line-height:1.7;}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;}
+.btn{padding:14px 32px;font-family:'Oswald',sans-serif;font-size:16px;letter-spacing:3px;font-weight:700;border-radius:8px;text-decoration:none;display:inline-block;transition:all .2s;}
+.btn:hover{transform:translateY(-2px);}
+.btn-green{background:linear-gradient(135deg,var(--green),#0ea5a0);color:#000;}
+.btn-purple{background:linear-gradient(135deg,#6c3fc5,#0ea5a0);color:#fff;}
+.back{color:var(--purple2);font-weight:700;font-size:15px;text-decoration:none;border-bottom:1px solid var(--purple2);padding-bottom:2px;}
+</style>
+</head>
+<body>
+<span class="icon">✊</span>
+<div class="badge">✅ MEMBERSHIP CONFIRMED — YOU ARE O.V.E.R</div>
+<h1>YOU ARE <span class="o">O</span><span style="color:#333">.</span><span class="v">V</span><span style="color:#333">.</span><span class="e">E</span><span style="color:#333">.</span><span class="r">R</span></h1>
+<p class="sub">Your name is on the wall. You are now an official member of O.V.E.R — Oliver Vo's Empowering Real Disabled Kids. Tell everyone. Grow the movement.</p>
+<div class="btns">
+  <a class="btn btn-green" href="ally.html">✊ ALSO BECOME AN ALLY</a>
+  <a class="btn btn-purple" href="share.html">📲 MAKE A SHARE CARD</a>
+</div>
+<a href="index.html" class="back">← BACK TO O.V.E.R</a>
+</body>
+</html>
