@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>O.V.E.R Spotlight — Disabled Kids Doing the Impossible</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Courier+Prime:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#060c1a;--navy2:#0a1628;--purple:#6c3fc5;--purple2:#8b5cf6;--teal:#0ea5a0;--teal2:#14b8b3;--gold:#f59e0b;--green:#22c55e;--white:#f8faff;--silver:#a0a8b8;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--white);font-family:'Nunito',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--purple2),var(--gold));}
+
+nav{background:rgba(6,12,26,0.97);border-bottom:4px solid transparent;border-image:linear-gradient(90deg,var(--purple),var(--teal),var(--gold)) 1;padding:0 40px;display:flex;align-items:center;gap:16px;height:76px;}
+.nav-seal{width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid rgba(108,63,197,0.5);flex-shrink:0;}
+.nav-seal img{width:100%;height:100%;object-fit:cover;}
+.nav-brand{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:4px;}
+.nav-brand .o{color:var(--purple2);}.nav-brand .v{color:var(--teal2);}.nav-brand .e{color:var(--gold);}.nav-brand .r{color:#ec4899;}.nav-brand .dot{color:#555;}
+.nav-back{margin-left:auto;background:rgba(245,158,11,0.12);border:1px solid var(--gold);color:var(--gold);padding:10px 24px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;text-decoration:none;border-radius:4px;transition:background .2s;}
+.nav-back:hover{background:rgba(245,158,11,0.2);}
+
+/* HERO */
+.hero{background:radial-gradient(ellipse at 50% 60%,rgba(245,158,11,0.2),transparent 70%),var(--navy);padding:80px 20px 60px;text-align:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(245,158,11,0.1);border:1px solid var(--gold);padding:8px 24px;border-radius:100px;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:3px;color:var(--gold);margin-bottom:24px;}
+.hero-badge::before{content:'★';color:var(--gold);}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(36px,8vw,80px);font-weight:700;letter-spacing:4px;margin-bottom:16px;}
+h1 span{background:linear-gradient(135deg,var(--gold),#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:clamp(15px,2vw,19px);color:var(--silver);max-width:640px;margin:0 auto 48px;line-height:1.7;}
+
+/* FEATURED (THIS MONTH) */
+.featured{padding:80px 40px;}
+.container{max-width:1100px;margin:0 auto;}
+.section-eyebrow{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:5px;color:var(--gold);margin-bottom:16px;display:block;}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:3px;margin-bottom:16px;}
+.section-line{width:80px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--gold),#f97316);margin-bottom:48px;}
+
+.spotlight-card{background:linear-gradient(135deg,rgba(245,158,11,0.08),rgba(108,63,197,0.06));border:2px solid rgba(245,158,11,0.4);border-radius:20px;padding:48px;display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;position:relative;overflow:hidden;}
+.spotlight-card::before{content:'⭐ THIS MONTH\'S SPOTLIGHT';position:absolute;top:20px;right:20px;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);padding:6px 16px;border-radius:100px;}
+.spotlight-avatar{width:200px;height:200px;border-radius:20px;background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(108,63,197,0.2));border:3px solid rgba(245,158,11,0.4);display:flex;align-items:center;justify-content:center;font-size:80px;flex-shrink:0;}
+.spotlight-name{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,48px);letter-spacing:3px;margin-bottom:4px;}
+.spotlight-name span{color:var(--gold);}
+.spotlight-condition{font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:3px;color:var(--purple2);margin-bottom:20px;display:block;}
+.spotlight-quote{font-size:22px;color:var(--white);line-height:1.7;font-style:italic;border-left:4px solid var(--gold);padding-left:20px;margin-bottom:24px;}
+.spotlight-story{font-size:16px;color:var(--silver);line-height:1.8;margin-bottom:24px;}
+.spotlight-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:2px;padding:6px 16px;border-radius:100px;border:1px solid;display:inline-block;}
+.tag.gold{color:var(--gold);border-color:rgba(245,158,11,0.4);}
+.tag.purple{color:var(--purple2);border-color:rgba(139,92,246,0.4);}
+.tag.green{color:var(--green);border-color:rgba(34,197,94,0.4);}
+
+/* PAST SPOTLIGHTS */
+.past{background:var(--navy2);padding:80px 40px;border-top:1px solid #0f1520;}
+.past-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.past-card{background:var(--navy);border:1px solid #0f1520;border-radius:16px;padding:28px 24px;transition:border-color .3s,transform .3s;}
+.past-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+.past-avatar{font-size:48px;margin-bottom:16px;display:block;}
+.past-month{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:8px;display:block;}
+.past-name{font-family:'Oswald',sans-serif;font-size:22px;letter-spacing:2px;margin-bottom:4px;}
+.past-cond{font-size:12px;color:var(--purple2);font-family:'Courier Prime',monospace;letter-spacing:2px;margin-bottom:12px;display:block;}
+.past-desc{font-size:13px;color:var(--silver);line-height:1.7;}
+
+/* NOMINATE */
+.nominate{padding:80px 40px;text-align:center;}
+.nom-card{background:linear-gradient(135deg,rgba(245,158,11,0.06),rgba(108,63,197,0.06));border:2px dashed rgba(245,158,11,0.3);border-radius:20px;padding:60px 40px;max-width:700px;margin:0 auto;}
+.nom-card h3{font-family:'Oswald',sans-serif;font-size:36px;letter-spacing:3px;margin-bottom:16px;}
+.nom-card p{color:var(--silver);line-height:1.8;margin-bottom:32px;font-size:17px;}
+.nom-btn{background:linear-gradient(135deg,var(--gold),#f97316);color:#000;padding:18px 48px;font-family:'Oswald',sans-serif;font-size:20px;letter-spacing:3px;font-weight:700;text-decoration:none;border-radius:8px;display:inline-block;transition:all .2s;box-shadow:0 8px 32px rgba(245,158,11,0.3);}
+.nom-btn:hover{transform:translateY(-3px);box-shadow:0 12px 48px rgba(245,158,11,0.5);}
+
+footer{padding:40px;text-align:center;border-top:1px solid #0f1520;}
+footer a{color:var(--gold);text-decoration:none;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;}
+
+@media(max-width:700px){
+  .spotlight-card{grid-template-columns:1fr;}
+  .spotlight-card::before{display:none;}
+  .past-grid{grid-template-columns:1fr;}
+  nav{padding:0 20px;}
+  .featured,.past,.nominate{padding:60px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-seal"><img src="logo.jpg" alt="O.V.E.R"></div>
+  <div class="nav-brand">
+    <span class="o">O</span><span class="dot">.</span><span class="v">V</span><span class="dot">.</span><span class="e">E</span><span class="dot">.</span><span class="r">R</span>
+  </div>
+  <a href="index.html" class="nav-back">← BACK TO O.V.E.R</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">★ MONTHLY FEATURE — DISABLED KIDS RISING</div>
+  <h1>THE <span>SPOTLIGHT</span></h1>
+  <p class="hero-sub">Every month, O.V.E.R picks one disabled kid doing something incredible and tells their story to the world. This is their moment. They deserve it.</p>
+</div>
+
+<div class="featured">
+  <div class="container">
+    <span class="section-eyebrow">// JULY 2026 — THIS MONTH</span>
+    <h2 class="section-title">FEATURED KID</h2>
+    <div class="section-line"></div>
+
+    <div class="spotlight-card">
+      <div class="spotlight-avatar">⚡</div>
+      <div>
+        <div class="spotlight-name"><span>OLIVER VO</span></div>
+        <span class="spotlight-condition">// TOURETTE SYNDROME · AGE 10 · LADERA RANCH, CA</span>
+        <p class="spotlight-quote">"I have Tourette syndrome and I used to get laughed at every day. So I built a worldwide movement to make sure no disabled kid ever has to feel that way again."</p>
+        <p class="spotlight-story">Oliver Vo is 10 years old, and he didn't wait for the world to get better — he decided to build it himself. After being mocked for his Tourette syndrome at school, Oliver founded O.V.E.R: Oliver Vo's Empowering Real Disabled Kids. O.V.E.R sends care packages to disabled kids worldwide, runs school programs to end ridicule, and is building an army of allies to stand up for disabled people everywhere. Oliver's goal: to make ridiculing disabled people punishable by law in every country on earth. He is 10 years old. He is just getting started.</p>
+        <div class="spotlight-tags">
+          <span class="tag gold">★ O.V.E.R FOUNDER</span>
+          <span class="tag purple">TOURETTE SYNDROME</span>
+          <span class="tag green">WORLDWIDE MOVEMENT</span>
+          <span class="tag gold">JULY 2026 SPOTLIGHT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="past">
+  <div class="container">
+    <span class="section-eyebrow">// COMING SOON</span>
+    <h2 class="section-title" style="font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:3px;margin-bottom:16px;">PAST SPOTLIGHTS</h2>
+    <div class="section-line"></div>
+    <div class="past-grid">
+      <div class="past-card" style="border-style:dashed;opacity:0.4;text-align:center;">
+        <span class="past-avatar">?</span>
+        <span class="past-month">AUGUST 2026</span>
+        <div class="past-name">COMING SOON</div>
+        <span class="past-cond">NOMINATE A KID BELOW</span>
+        <p class="past-desc">The next spotlight hero is out there. Nominate them and their story will be told to the world.</p>
+      </div>
+      <div class="past-card" style="border-style:dashed;opacity:0.3;text-align:center;">
+        <span class="past-avatar">?</span>
+        <span class="past-month">SEPTEMBER 2026</span>
+        <div class="past-name">COMING SOON</div>
+        <span class="past-cond">NOMINATE A KID BELOW</span>
+        <p class="past-desc">Every month a new disabled kid gets their story told. It could be someone you know.</p>
+      </div>
+      <div class="past-card" style="border-style:dashed;opacity:0.2;text-align:center;">
+        <span class="past-avatar">?</span>
+        <span class="past-month">OCTOBER 2026</span>
+        <div class="past-name">COMING SOON</div>
+        <span class="past-cond">NOMINATE A KID BELOW</span>
+        <p class="past-desc">The O.V.E.R Spotlight is forever. Every name stays on this page forever.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="nominate">
+  <div class="nom-card">
+    <h3>⭐ NOMINATE A KID</h3>
+    <p>Do you know a disabled kid doing something incredible? Playing a sport, making art, helping others, building something, overcoming something hard? Nominate them and O.V.E.R will feature their story to the world.</p>
+    <a href="mailto:troungnvo@icloud.com?subject=O.V.E.R Spotlight Nomination&body=Kid's name:%0AAge:%0ADisability:%0ACity/State:%0AWhy they deserve the spotlight:%0A" class="nom-btn">⭐ NOMINATE A KID</a>
+  </div>
+</div>
+
+<footer><a href="index.html">← BACK TO O.V.E.R MAIN SITE</a></footer>
+
+</body>
+</html>

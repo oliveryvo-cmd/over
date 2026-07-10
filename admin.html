@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>O.V.E.R Admin Dashboard</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Nunito:wght@400;700;900&family=Courier+Prime:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#060c1a;--navy2:#0a1628;--purple:#6c3fc5;--purple2:#8b5cf6;--teal:#0ea5a0;--gold:#f59e0b;--green:#22c55e;--red:#ef4444;--white:#f8faff;--silver:#a0a8b8;}
+body{background:var(--navy);color:var(--white);font-family:'Nunito',sans-serif;min-height:100vh;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--purple),var(--teal));}
+
+/* LOGIN */
+#loginScreen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;}
+.login-logo{font-size:80px;margin-bottom:24px;filter:drop-shadow(0 0 40px rgba(108,63,197,0.6));}
+.login-title{font-family:'Oswald',sans-serif;font-size:clamp(28px,6vw,56px);letter-spacing:4px;margin-bottom:8px;}
+.login-sub{font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:3px;color:#444;margin-bottom:40px;}
+.login-box{background:var(--navy2);border:1px solid #1a2540;border-radius:16px;padding:40px;max-width:360px;width:100%;}
+.login-box label{display:block;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:var(--purple2);margin-bottom:8px;text-align:left;}
+.login-box input{width:100%;background:rgba(255,255,255,0.04);border:1px solid #1a2540;border-radius:8px;padding:14px 18px;color:var(--white);font-family:'Courier Prime',monospace;font-size:16px;outline:none;margin-bottom:16px;letter-spacing:4px;transition:border-color .2s;}
+.login-box input:focus{border-color:var(--purple2);}
+.login-btn{width:100%;background:linear-gradient(135deg,var(--purple),var(--teal));border:none;padding:16px;font-family:'Oswald',sans-serif;font-size:18px;letter-spacing:3px;color:#fff;font-weight:700;border-radius:8px;cursor:pointer;transition:all .2s;}
+.login-btn:hover{opacity:0.85;}
+.login-error{color:var(--red);font-size:13px;margin-top:12px;font-family:'Courier Prime',monospace;display:none;}
+
+/* DASHBOARD */
+#dashboard{display:none;}
+nav{background:rgba(6,12,26,0.97);border-bottom:4px solid transparent;border-image:linear-gradient(90deg,var(--purple),var(--teal),var(--gold)) 1;padding:0 40px;display:flex;align-items:center;gap:16px;height:76px;}
+.nav-seal{width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid rgba(108,63,197,0.5);flex-shrink:0;}
+.nav-seal img{width:100%;height:100%;object-fit:cover;}
+.nav-title{font-family:'Oswald',sans-serif;font-size:20px;letter-spacing:4px;color:var(--purple2);}
+.nav-badge{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;background:rgba(239,68,68,0.2);border:1px solid var(--red);color:var(--red);padding:4px 12px;border-radius:100px;}
+.nav-logout{margin-left:auto;background:transparent;border:1px solid #333;color:#555;padding:8px 20px;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:2px;border-radius:4px;cursor:pointer;transition:all .2s;}
+.nav-logout:hover{border-color:var(--red);color:var(--red);}
+
+.dash{max-width:1100px;margin:0 auto;padding:48px 40px;}
+
+/* STAT CARDS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px;}
+.stat{background:var(--navy2);border:1px solid #0f1520;border-radius:16px;padding:28px 24px;text-align:center;}
+.stat-num{font-family:'Oswald',sans-serif;font-size:48px;font-weight:700;display:block;margin-bottom:4px;}
+.stat-label{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;color:#444;}
+.stat.purple .stat-num{background:linear-gradient(135deg,var(--purple2),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.stat.green .stat-num{color:var(--green);}
+.stat.gold .stat-num{color:var(--gold);}
+.stat.teal .stat-num{color:var(--teal);}
+
+/* SECTIONS */
+.section-eyebrow{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:5px;color:var(--purple2);margin-bottom:12px;display:block;}
+.section-title{font-family:'Oswald',sans-serif;font-size:28px;letter-spacing:3px;margin-bottom:12px;}
+.section-line{width:60px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--purple),var(--teal));margin-bottom:28px;}
+
+/* HOW TO GUIDE */
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:60px;}
+.guide-card{background:var(--navy2);border:1px solid #0f1520;border-radius:16px;padding:28px 24px;}
+.guide-card h4{font-family:'Oswald',sans-serif;font-size:18px;letter-spacing:2px;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+.guide-card p{font-size:14px;color:var(--silver);line-height:1.8;}
+.guide-card code{font-family:'Courier Prime',monospace;font-size:12px;color:var(--purple2);background:rgba(108,63,197,0.1);padding:2px 6px;border-radius:4px;}
+
+/* ALLY WALL EDITOR */
+.wall-editor{background:var(--navy2);border:1px solid #0f1520;border-radius:16px;padding:32px;margin-bottom:40px;}
+.add-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+.add-row input{flex:1;min-width:140px;background:rgba(255,255,255,0.04);border:1px solid #1a2540;border-radius:8px;padding:12px 16px;color:var(--white);font-family:'Nunito',sans-serif;font-size:14px;outline:none;transition:border-color .2s;}
+.add-row input:focus{border-color:var(--green);}
+.add-ally-btn{background:linear-gradient(135deg,var(--green),var(--teal));border:none;padding:12px 24px;font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:2px;color:#000;font-weight:700;border-radius:8px;cursor:pointer;white-space:nowrap;}
+.ally-list{display:flex;flex-direction:column;gap:8px;max-height:400px;overflow-y:auto;}
+.ally-row{display:flex;align-items:center;gap:12px;background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.15);border-radius:8px;padding:12px 16px;}
+.ally-row .aname{font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:1px;flex:1;}
+.ally-row .aloc{font-family:'Courier Prime',monospace;font-size:11px;color:#555;}
+.ally-row .adate{font-family:'Courier Prime',monospace;font-size:11px;color:#444;margin-right:auto;}
+.del-btn{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:var(--red);padding:4px 12px;border-radius:4px;cursor:pointer;font-size:12px;font-family:'Courier Prime',monospace;}
+.del-btn:hover{background:rgba(239,68,68,0.2);}
+.save-btn{background:linear-gradient(135deg,var(--purple),var(--teal));border:none;padding:14px 32px;font-family:'Oswald',sans-serif;font-size:16px;letter-spacing:2px;color:#fff;font-weight:700;border-radius:8px;cursor:pointer;margin-top:16px;width:100%;}
+.save-banner{background:rgba(34,197,94,0.1);border:1px solid var(--green);border-radius:8px;padding:16px 24px;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:2px;color:var(--green);display:none;text-align:center;margin-top:12px;}
+
+/* LINKS */
+.links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:60px;}
+.link-card{background:var(--navy2);border:1px solid #0f1520;border-radius:12px;padding:20px;text-decoration:none;color:var(--white);transition:border-color .2s,transform .2s;display:block;}
+.link-card:hover{border-color:var(--purple2);transform:translateY(-2px);}
+.link-card h5{font-family:'Oswald',sans-serif;font-size:16px;letter-spacing:2px;margin-bottom:4px;}
+.link-card span{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:2px;color:#444;}
+
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr;}.guide-grid{grid-template-columns:1fr;}.links-grid{grid-template-columns:1fr 1fr;}.dash{padding:32px 20px;}nav{padding:0 20px;}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginScreen">
+  <div class="login-logo">🛡️</div>
+  <h1 class="login-title">O.V.E.R ADMIN</h1>
+  <p class="login-sub">// RESTRICTED ACCESS — OLIVER VO ONLY</p>
+  <div class="login-box">
+    <label>ACCESS CODE</label>
+    <input type="password" id="pwInput" placeholder="••••••••••" onkeydown="if(event.key==='Enter')login()">
+    <button class="login-btn" onclick="login()">🔓 ENTER DASHBOARD</button>
+    <p class="login-error" id="loginErr">❌ WRONG CODE. TRY AGAIN.</p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard">
+  <nav>
+    <div class="nav-seal"><img src="logo.jpg" alt="O.V.E.R"></div>
+    <div class="nav-title">ADMIN DASHBOARD</div>
+    <span class="nav-badge">🔴 RESTRICTED</span>
+    <button class="nav-logout" onclick="logout()">LOG OUT</button>
+  </nav>
+
+  <div class="dash">
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat purple">
+        <span class="stat-num" id="allyCount">1</span>
+        <div class="stat-label">TOTAL ALLIES</div>
+      </div>
+      <div class="stat green">
+        <span class="stat-num" id="careCount">0</span>
+        <div class="stat-label">CARE REQUESTS</div>
+      </div>
+      <div class="stat gold">
+        <span class="stat-num" id="spotCount">1</span>
+        <div class="stat-label">SPOTLIGHTS</div>
+      </div>
+      <div class="stat teal">
+        <span class="stat-num" id="pageCount">8</span>
+        <div class="stat-label">LIVE PAGES</div>
+      </div>
+    </div>
+
+    <!-- HOW TO MANAGE -->
+    <span class="section-eyebrow">// HOW TO MANAGE O.V.E.R</span>
+    <h2 class="section-title">YOUR CONTROL GUIDE</h2>
+    <div class="section-line"></div>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <h4>📧 ALLY SIGN-UPS</h4>
+        <p>When a new ally signs the pledge, the form sends an email to <code>troungnvo@icloud.com</code>. Check that email to see new ally names, their city, age, and school. Then add them to the Ally Wall using the editor below.</p>
+      </div>
+      <div class="guide-card">
+        <h4>📦 CARE PACKAGE REQUESTS</h4>
+        <p>Care package applications also go to <code>troungnvo@icloud.com</code>. Each email has the kid's name, age, disability, city, and parent email. Reply to arrange the care package delivery.</p>
+      </div>
+      <div class="guide-card">
+        <h4>⭐ SPOTLIGHT — HOW TO CHANGE IT</h4>
+        <p>Open <code>spotlight.html</code> and find the section that says <code>THIS MONTH'S SPOTLIGHT</code>. Change the name, quote, story, condition, and tags. Save and push to GitHub to go live.</p>
+      </div>
+      <div class="guide-card">
+        <h4>🚀 HOW TO PUSH UPDATES</h4>
+        <p>After making changes, open Terminal, go to the <code>over</code> folder, then run: <code>git add -A</code> → <code>git commit -m "update"</code> → <code>git push</code>. Changes go live in 1–2 minutes.</p>
+      </div>
+    </div>
+
+    <!-- ALLY WALL EDITOR -->
+    <span class="section-eyebrow">// ALLY WALL MANAGER</span>
+    <h2 class="section-title">ADD / REMOVE ALLIES</h2>
+    <div class="section-line"></div>
+    <div class="wall-editor">
+      <div class="add-row">
+        <input type="text" id="newName" placeholder="Full name">
+        <input type="text" id="newLoc" placeholder="City, State">
+        <input type="text" id="newDate" placeholder="Month Year (e.g. Jul 2026)">
+        <button class="add-ally-btn" onclick="addAlly()">+ ADD ALLY</button>
+      </div>
+      <div class="ally-list" id="allyList"></div>
+      <button class="save-btn" onclick="saveWall()">💾 SAVE TO ALLY WALL (wall.html)</button>
+      <div class="save-banner" id="saveBanner">✅ SAVED! Now push to GitHub to go live.</div>
+    </div>
+
+    <!-- SITE LINKS -->
+    <span class="section-eyebrow">// QUICK LINKS</span>
+    <h2 class="section-title">YOUR LIVE PAGES</h2>
+    <div class="section-line"></div>
+    <div class="links-grid">
+      <a class="link-card" href="index.html" target="_blank"><h5>🏠 MAIN SITE</h5><span>index.html</span></a>
+      <a class="link-card" href="ally.html" target="_blank"><h5>✊ ALLY SIGNUP</h5><span>ally.html</span></a>
+      <a class="link-card" href="wall.html" target="_blank"><h5>🧱 ALLY WALL</h5><span>wall.html</span></a>
+      <a class="link-card" href="share.html" target="_blank"><h5>📲 SHARE CARD</h5><span>share.html</span></a>
+      <a class="link-card" href="spotlight.html" target="_blank"><h5>⭐ SPOTLIGHT</h5><span>spotlight.html</span></a>
+      <a class="link-card" href="apply.html" target="_blank"><h5>📦 CARE PACKAGES</h5><span>apply.html</span></a>
+      <a class="link-card" href="ally-thanks.html" target="_blank"><h5>🃏 ALLY CARD</h5><span>ally-thanks.html</span></a>
+      <a class="link-card" href="thanks.html" target="_blank"><h5>📋 CARE CARD</h5><span>thanks.html</span></a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const PW = 'oliver2026';
+
+function login() {
+  const v = document.getElementById('pwInput').value;
+  if(v === PW) {
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+    loadWall();
+  } else {
+    document.getElementById('loginErr').style.display='block';
+  }
+}
+
+function logout() {
+  document.getElementById('loginScreen').style.display='flex';
+  document.getElementById('dashboard').style.display='none';
+  document.getElementById('pwInput').value='';
+}
+
+// Ally wall stored in localStorage for live editing
+let allies = JSON.parse(localStorage.getItem('over_allies') || 'null') || [
+  { name: "Oliver Vo", location: "Ladera Ranch, CA", date: "Jul 2026", note: "Founder" }
+];
+
+function loadWall() {
+  renderList();
+  document.getElementById('allyCount').textContent = allies.length;
+}
+
+function renderList() {
+  const ul = document.getElementById('allyList');
+  ul.innerHTML = '';
+  allies.forEach((a,i) => {
+    const row = document.createElement('div');
+    row.className = 'ally-row';
+    row.innerHTML = `<div class="aname">✊ ${a.name}${a.note?' <span style="font-size:11px;color:#22c55e;font-family:Courier Prime,monospace">— '+a.note+'</span>':''}</div><div class="aloc">${a.location}</div><div class="adate">${a.date}</div><button class="del-btn" onclick="removeAlly(${i})">✕ REMOVE</button>`;
+    ul.appendChild(row);
+  });
+  document.getElementById('allyCount').textContent = allies.length;
+}
+
+function addAlly() {
+  const name = document.getElementById('newName').value.trim();
+  const loc = document.getElementById('newLoc').value.trim();
+  const date = document.getElementById('newDate').value.trim() || new Date().toLocaleDateString('en-US',{month:'short',year:'numeric'});
+  if(!name) return;
+  allies.push({name, location: loc||'Unknown', date});
+  localStorage.setItem('over_allies', JSON.stringify(allies));
+  document.getElementById('newName').value='';
+  document.getElementById('newLoc').value='';
+  document.getElementById('newDate').value='';
+  renderList();
+}
+
+function removeAlly(i) {
+  if(confirm(`Remove ${allies[i].name} from the Ally Wall?`)) {
+    allies.splice(i,1);
+    localStorage.setItem('over_allies', JSON.stringify(allies));
+    renderList();
+  }
+}
+
+function saveWall() {
+  const banner = document.getElementById('saveBanner');
+  // Generate the allies JS array string for wall.html
+  const jsArr = allies.map(a => {
+    let s = `  { name: "${a.name}", location: "${a.location}", date: "${a.date}"`;
+    if(a.note) s += `, note: "${a.note}"`;
+    s += ` }`;
+    return s;
+  }).join(',\n');
+  const msg = `✅ Your ally list has ${allies.length} allies.\n\nTo update wall.html, open it in a code editor and replace the allies array with:\n\n[\n${jsArr}\n]\n\nThen push to GitHub.`;
+  alert(msg);
+  banner.style.display='block';
+  setTimeout(()=>banner.style.display='none',4000);
+}
+</script>
+</body>
+</html>

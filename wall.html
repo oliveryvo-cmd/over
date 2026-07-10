@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>O.V.E.R Ally Wall — Names That Changed the World</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Courier+Prime:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#060c1a;--navy2:#0a1628;--purple:#6c3fc5;--purple2:#8b5cf6;--teal:#0ea5a0;--teal2:#14b8b3;--gold:#f59e0b;--green:#22c55e;--white:#f8faff;--silver:#a0a8b8;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--white);font-family:'Nunito',sans-serif;min-height:100vh;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--green),var(--teal));}
+
+nav{background:rgba(6,12,26,0.97);border-bottom:4px solid transparent;border-image:linear-gradient(90deg,var(--purple),var(--teal),var(--gold)) 1;padding:0 40px;display:flex;align-items:center;gap:16px;height:76px;}
+.nav-seal{width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid rgba(108,63,197,0.5);flex-shrink:0;}
+.nav-seal img{width:100%;height:100%;object-fit:cover;}
+.nav-brand{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:4px;}
+.nav-brand .o{color:var(--purple2);}.nav-brand .v{color:var(--teal2);}.nav-brand .e{color:var(--gold);}.nav-brand .r{color:#ec4899;}.nav-brand .dot{color:#555;}
+.nav-back{margin-left:auto;background:rgba(34,197,94,0.15);border:1px solid var(--green);color:var(--green);padding:10px 24px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;text-decoration:none;border-radius:4px;transition:background .2s;}
+.nav-back:hover{background:rgba(34,197,94,0.25);}
+
+/* HERO */
+.hero{background:radial-gradient(ellipse at 50% 60%,rgba(34,197,94,0.25),transparent 70%),var(--navy);padding:80px 20px 60px;text-align:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(34,197,94,0.1);border:1px solid var(--green);padding:8px 24px;border-radius:100px;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:3px;color:var(--green);margin-bottom:24px;}
+.hero-badge::before{content:'●';color:var(--green);animation:blink 1.5s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(36px,8vw,80px);font-weight:700;letter-spacing:4px;margin-bottom:16px;}
+h1 span{color:var(--green);}
+.hero-sub{font-size:clamp(15px,2vw,19px);color:var(--silver);max-width:600px;margin:0 auto 40px;line-height:1.7;}
+.counter-row{display:flex;gap:60px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;}
+.counter{text-align:center;}
+.counter-num{font-family:'Oswald',sans-serif;font-size:56px;font-weight:700;display:block;background:linear-gradient(135deg,var(--green),var(--teal2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.counter-label{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:#555;}
+
+/* WALL */
+.wall-section{padding:80px 40px;}
+.container{max-width:1100px;margin:0 auto;}
+.section-eyebrow{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:5px;color:var(--green);margin-bottom:16px;display:block;}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:3px;margin-bottom:16px;}
+.section-line{width:80px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--green),var(--teal));margin-bottom:48px;}
+
+.wall-grid{display:flex;flex-wrap:wrap;gap:10px;}
+.ally-tile{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:14px 20px;display:flex;flex-direction:column;gap:4px;transition:border-color .2s,transform .2s;}
+.ally-tile:hover{border-color:var(--green);transform:translateY(-2px);}
+.ally-name{font-family:'Oswald',sans-serif;font-size:16px;letter-spacing:2px;color:var(--white);}
+.ally-meta{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:1px;color:#444;}
+.ally-tile.new{border-color:rgba(34,197,94,0.5);background:rgba(34,197,94,0.1);}
+.ally-tile.new .ally-name{color:var(--green);}
+
+.join-cta{background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(14,165,160,0.1));border:2px dashed rgba(34,197,94,0.3);border-radius:16px;padding:48px 40px;text-align:center;margin-top:60px;}
+.join-cta h3{font-family:'Oswald',sans-serif;font-size:28px;letter-spacing:3px;margin-bottom:12px;}
+.join-cta p{color:var(--silver);margin-bottom:28px;line-height:1.7;}
+.join-btn{background:linear-gradient(135deg,var(--green),var(--teal));color:#000;padding:16px 48px;font-family:'Oswald',sans-serif;font-size:18px;letter-spacing:3px;font-weight:700;text-decoration:none;border-radius:8px;display:inline-block;transition:all .2s;box-shadow:0 8px 32px rgba(34,197,94,0.3);}
+.join-btn:hover{transform:translateY(-3px);box-shadow:0 12px 48px rgba(34,197,94,0.5);}
+
+footer{padding:40px;text-align:center;border-top:1px solid #0f1520;}
+footer p{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:#333;}
+footer a{color:var(--green);text-decoration:none;}
+
+@media(max-width:600px){nav{padding:0 20px;}.wall-section{padding:60px 20px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-seal"><img src="logo.jpg" alt="O.V.E.R"></div>
+  <div class="nav-brand">
+    <span class="o">O</span><span class="dot">.</span><span class="v">V</span><span class="dot">.</span><span class="e">E</span><span class="dot">.</span><span class="r">R</span>
+  </div>
+  <a href="index.html" class="nav-back">← BACK TO O.V.E.R</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">LIVE ALLY WALL — GROWING EVERY DAY</div>
+  <h1>THE <span>ALLY WALL</span></h1>
+  <p class="hero-sub">These are the kids who took the pledge. They made a promise to stand beside disabled kids — and they kept it. Every name on this wall is a step toward a world where disabled kids are never mocked again.</p>
+  <div class="counter-row">
+    <div class="counter">
+      <span class="counter-num" id="totalCount">1</span>
+      <div class="counter-label">TOTAL ALLIES</div>
+    </div>
+    <div class="counter">
+      <span class="counter-num" id="stateCount">1</span>
+      <div class="counter-label">STATES &amp; COUNTRIES</div>
+    </div>
+  </div>
+</div>
+
+<div class="wall-section">
+  <div class="container">
+    <span class="section-eyebrow">// THE NAMES</span>
+    <h2 class="section-title">EVERY ALLY, FOREVER</h2>
+    <div class="section-line"></div>
+
+    <div class="wall-grid" id="wallGrid"></div>
+
+    <div class="join-cta">
+      <h3>YOUR NAME BELONGS HERE</h3>
+      <p>Take the O.V.E.R Ally Pledge and your name goes on this wall — forever. It takes 2 minutes and it means everything.</p>
+      <a href="ally.html" class="join-btn">✊ TAKE THE PLEDGE</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>O.V.E.R ALLY WALL — <a href="index.html">BACK TO MAIN SITE</a></p>
+</footer>
+
+<script>
+// Allies list — Oliver: add new allies here as they come in via email!
+const allies = [
+  { name: "Oliver Vo", location: "Ladera Ranch, CA", date: "Jul 2026", isNew: true, note: "Founder" },
+];
+
+const grid = document.getElementById('wallGrid');
+const states = new Set();
+
+allies.forEach(a => {
+  states.add(a.location.split(',').pop().trim());
+  const tile = document.createElement('div');
+  tile.className = 'ally-tile' + (a.isNew ? ' new' : '');
+  tile.innerHTML = `<div class="ally-name">✊ ${a.name}${a.note ? ' <span style="font-size:11px;color:#22c55e;font-family:Courier Prime,monospace;">— ${a.note}</span>' : ''}</div><div class="ally-meta">${a.location} · ${a.date}</div>`;
+  grid.appendChild(tile);
+});
+
+document.getElementById('totalCount').textContent = allies.length;
+document.getElementById('stateCount').textContent = states.size;
+</script>
+</body>
+</html>
