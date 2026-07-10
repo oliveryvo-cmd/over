@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>O.V.E.R Petition — Make Ridiculing Disabled People Illegal</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Courier+Prime:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#060c1a;--navy2:#0a1628;--purple:#6c3fc5;--purple2:#8b5cf6;--teal:#0ea5a0;--teal2:#14b8b3;--gold:#f59e0b;--green:#22c55e;--red:#ef4444;--white:#f8faff;--silver:#a0a8b8;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--white);font-family:'Nunito',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--red),var(--purple));}
+
+nav{background:rgba(6,12,26,0.97);border-bottom:4px solid transparent;border-image:linear-gradient(90deg,var(--purple),var(--teal),var(--gold)) 1;padding:0 40px;display:flex;align-items:center;gap:16px;height:76px;position:sticky;top:0;z-index:100;}
+.nav-seal{width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid rgba(108,63,197,0.5);flex-shrink:0;}
+.nav-seal img{width:100%;height:100%;object-fit:cover;}
+.nav-brand{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:4px;}
+.nav-brand .o{color:var(--purple2);}.nav-brand .v{color:var(--teal2);}.nav-brand .e{color:var(--gold);}.nav-brand .r{color:#ec4899;}.nav-brand .dot{color:#555;}
+.nav-back{margin-left:auto;background:rgba(239,68,68,0.1);border:1px solid var(--red);color:var(--red);padding:10px 24px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;text-decoration:none;border-radius:4px;}
+.nav-back:hover{background:rgba(239,68,68,0.2);}
+
+.hero{background:radial-gradient(ellipse at 50% 60%,rgba(239,68,68,0.2),transparent 65%),var(--navy);padding:80px 20px 60px;text-align:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(239,68,68,0.1);border:1px solid var(--red);padding:8px 24px;border-radius:100px;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:3px;color:var(--red);margin-bottom:24px;}
+.hero-badge::before{content:'●';color:var(--red);animation:blink 1.2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+.hero-icon{font-size:80px;display:block;margin-bottom:16px;filter:drop-shadow(0 0 40px rgba(239,68,68,0.5));}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(32px,7vw,72px);font-weight:700;letter-spacing:3px;margin-bottom:16px;line-height:1.1;}
+h1 span{color:var(--red);}
+.hero-sub{font-size:clamp(15px,2vw,19px);color:var(--silver);max-width:680px;margin:0 auto 48px;line-height:1.7;}
+
+/* COUNTER */
+.counter-wrap{max-width:700px;margin:0 auto 60px;}
+.counter-bar-bg{background:#0f1520;border-radius:100px;height:20px;overflow:hidden;margin-bottom:16px;border:1px solid #1a2540;}
+.counter-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--red),var(--purple));transition:width 1.5s ease;width:0%;}
+.counter-row{display:flex;justify-content:space-between;align-items:center;}
+.counter-num{font-family:'Oswald',sans-serif;font-size:48px;font-weight:700;color:var(--red);}
+.counter-goal{font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:3px;color:#555;}
+
+/* WHY */
+.why{background:var(--navy2);padding:80px 40px;border-top:1px solid #0f1520;}
+.container{max-width:1000px;margin:0 auto;}
+.section-eyebrow{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:5px;color:var(--red);margin-bottom:16px;display:block;}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:3px;margin-bottom:16px;}
+.section-line{width:80px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--red),var(--purple));margin-bottom:48px;}
+.why-text{font-size:17px;color:var(--silver);line-height:1.9;max-width:800px;margin-bottom:32px;}
+.why-text strong{color:var(--white);}
+.stat-row{display:flex;gap:48px;flex-wrap:wrap;margin-bottom:48px;}
+.stat-item{text-align:center;}
+.stat-num{font-family:'Oswald',sans-serif;font-size:52px;font-weight:700;color:var(--red);display:block;}
+.stat-label{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:#555;}
+
+/* SIGN FORM */
+.sign-section{padding:80px 40px;}
+.sign-card{background:var(--navy2);border:2px solid rgba(239,68,68,0.4);border-radius:20px;padding:48px 40px;max-width:700px;margin:0 auto;}
+.sign-card h2{font-family:'Oswald',sans-serif;font-size:32px;letter-spacing:3px;margin-bottom:8px;text-align:center;}
+.sign-card > p{color:var(--silver);text-align:center;margin-bottom:40px;line-height:1.7;}
+.form-group{margin-bottom:24px;}
+.form-group label{display:block;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:var(--red);margin-bottom:8px;}
+.form-group input,.form-group select{width:100%;background:rgba(255,255,255,0.04);border:1px solid #1a2540;border-radius:8px;padding:14px 18px;color:var(--white);font-family:'Nunito',sans-serif;font-size:15px;outline:none;transition:border-color .2s;}
+.form-group input:focus,.form-group select:focus{border-color:var(--red);}
+.form-group select option{background:#0a1628;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.petition-text{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:24px;margin-bottom:28px;font-size:15px;color:var(--silver);line-height:1.9;}
+.petition-text strong{color:var(--white);}
+.sign-check{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;cursor:pointer;}
+.sign-check input[type=checkbox]{width:22px;height:22px;margin-top:2px;accent-color:var(--red);flex-shrink:0;cursor:pointer;}
+.sign-check span{font-size:14px;color:var(--silver);line-height:1.7;}
+.sign-btn{width:100%;background:linear-gradient(135deg,var(--red),var(--purple));border:none;padding:20px;font-family:'Oswald',sans-serif;font-size:22px;letter-spacing:4px;color:#fff;font-weight:700;border-radius:8px;cursor:pointer;transition:all .2s;box-shadow:0 8px 32px rgba(239,68,68,0.3);}
+.sign-btn:hover{transform:translateY(-3px);box-shadow:0 12px 48px rgba(239,68,68,0.5);}
+
+/* SIGNERS */
+.signers{background:var(--navy2);padding:60px 40px;border-top:1px solid #0f1520;}
+.signers-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;}
+.signer-tag{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:6px;padding:8px 14px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:1px;}
+.signer-loc{font-family:'Courier Prime',monospace;font-size:10px;color:#444;margin-left:6px;}
+
+footer{padding:40px;text-align:center;border-top:1px solid #0f1520;}
+footer a{color:var(--red);text-decoration:none;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;}
+@media(max-width:600px){.form-row{grid-template-columns:1fr;}.sign-card{padding:32px 20px;}.stat-row{gap:24px;}nav{padding:0 20px;}.why,.sign-section,.signers{padding:60px 20px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-seal"><img src="logo.jpg" alt="O.V.E.R"></div>
+  <div class="nav-brand"><span class="o">O</span><span class="dot">.</span><span class="v">V</span><span class="dot">.</span><span class="e">E</span><span class="dot">.</span><span class="r">R</span></div>
+  <a href="index.html" class="nav-back">← BACK TO O.V.E.R</a>
+</nav>
+
+<div class="hero">
+  <span class="hero-icon">✍️</span>
+  <div class="hero-badge">OFFICIAL O.V.E.R PETITION — SIGN NOW</div>
+  <h1>MAKE RIDICULING<br>DISABLED KIDS<br><span>ILLEGAL.</span></h1>
+  <p class="hero-sub">Disabled kids are mocked, imitated, and humiliated every day — and it's legal. We're changing that. Sign this petition and demand that lawmakers make the ridicule of disabled people a punishable offense. When we reach 1,000 signatures, we deliver this petition to lawmakers.</p>
+
+  <div class="counter-wrap">
+    <div class="counter-bar-bg"><div class="counter-bar-fill" id="barFill"></div></div>
+    <div class="counter-row">
+      <span><span class="counter-num" id="sigCount">1</span> <span style="font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:2px;color:#555;">SIGNATURES</span></span>
+      <span class="counter-goal">GOAL: 1,000 — THEN WE DELIVER IT</span>
+    </div>
+  </div>
+</div>
+
+<div class="why">
+  <div class="container">
+    <span class="section-eyebrow">// WHY THIS MATTERS</span>
+    <h2 class="section-title">THE PROBLEM IS REAL</h2>
+    <div class="section-line"></div>
+    <p class="why-text">Disabled kids in America and around the world are <strong>legally mocked every single day</strong>. Kids with Tourette syndrome, autism, cerebral palsy, Down syndrome, deafness — they walk into school knowing they will be laughed at, imitated, and humiliated. And when they report it, they're told it's "just kids being kids."</p>
+    <p class="why-text"><strong>It is not "just kids being kids."</strong> It is targeted cruelty. It causes depression, anxiety, school avoidance, and in the worst cases, it ends lives. This petition demands that lawmakers treat the ridiculing of disabled people the same way they treat other forms of targeted harassment — with real legal consequences.</p>
+    <div class="stat-row">
+      <div class="stat-item"><span class="stat-num">1 in 4</span><div class="stat-label">AMERICANS ARE DISABLED</div></div>
+      <div class="stat-item"><span class="stat-num">90%</span><div class="stat-label">OF DISABLED KIDS BULLIED</div></div>
+      <div class="stat-item"><span class="stat-num">0</span><div class="stat-label">LAWS AGAINST MOCKERY</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="sign-section">
+  <div class="container">
+    <div class="sign-card">
+      <h2>✍️ SIGN THE PETITION</h2>
+      <p>Add your name to the O.V.E.R Petition. When we reach 1,000 signatures, this goes to real lawmakers.</p>
+
+      <form action="https://formsubmit.co/troungnvo@icloud.com" method="POST">
+        <input type="hidden" name="_subject" value="NEW O.V.E.R PETITION SIGNATURE">
+        <input type="hidden" name="_next" value="petition-thanks.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="type" value="PETITION SIGNATURE">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>FIRST NAME *</label>
+            <input type="text" name="first_name" required placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label>LAST NAME *</label>
+            <input type="text" name="last_name" required placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>EMAIL *</label>
+          <input type="email" name="email" required placeholder="your@email.com">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>CITY &amp; STATE *</label>
+            <input type="text" name="location" required placeholder="City, State">
+          </div>
+          <div class="form-group">
+            <label>AGE GROUP *</label>
+            <select name="age_group" required>
+              <option value="">Select</option>
+              <option>Under 13</option>
+              <option>13–17</option>
+              <option>18–25</option>
+              <option>26–40</option>
+              <option>40+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="petition-text">
+          <strong>THE PETITION:</strong><br><br>
+          "We the undersigned demand that lawmakers in the United States — and worldwide — pass legislation making the deliberate ridicule, mockery, and humiliation of disabled people a punishable offense. Disabled people deserve the same legal protection against targeted cruelty that every other protected group receives. We call on lawmakers to act now."<br><br>
+          <strong>Founded by Oliver Vo, Age 10 — O.V.E.R Worldwide, 2026</strong>
+        </div>
+
+        <label class="sign-check">
+          <input type="checkbox" name="agreed" value="yes" required>
+          <span>I have read the petition above and I sign my name to it. I am signing voluntarily and I want my name to be included when this petition is delivered to lawmakers. <strong style="color:var(--white)">*</strong></span>
+        </label>
+
+        <button type="submit" class="sign-btn">✍️ SIGN THE PETITION</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="signers">
+  <div class="container">
+    <span class="section-eyebrow">// WHO HAS SIGNED</span>
+    <h2 class="section-title" style="font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:3px;margin-bottom:16px;">SIGNATURES SO FAR</h2>
+    <div class="section-line"></div>
+    <div class="signers-grid" id="signersGrid"></div>
+  </div>
+</div>
+
+<footer><a href="index.html">← BACK TO O.V.E.R MAIN SITE</a></footer>
+
+<script>
+const signers = [
+  { name: "Oliver V.", loc: "Ladera Ranch, CA" },
+];
+const grid = document.getElementById('signersGrid');
+signers.forEach(s => {
+  const t = document.createElement('div');
+  t.className = 'signer-tag';
+  t.innerHTML = `✍️ ${s.name} <span class="signer-loc">${s.loc}</span>`;
+  grid.appendChild(t);
+});
+document.getElementById('sigCount').textContent = signers.length;
+const pct = Math.min((signers.length / 1000) * 100, 100);
+setTimeout(() => document.getElementById('barFill').style.width = pct + '%', 200);
+</script>
+</body>
+</html>
