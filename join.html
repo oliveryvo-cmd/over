@@ -118,11 +118,7 @@ footer a{color:var(--purple2);text-decoration:none;font-family:'Courier Prime',m
       <h2>✊ SIGN &amp; JOIN O.V.E.R</h2>
       <p>Fill out the form below. Your name goes on the member wall and you become an official O.V.E.R member — permanently.</p>
 
-      <form action="https://formsubmit.co/troungnvo@icloud.com" method="POST">
-        <input type="hidden" name="_subject" value="NEW O.V.E.R MEMBER PETITION SIGNATURE">
-        <input type="hidden" name="_next" value="join-thanks.html">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="type" value="MEMBER PETITION">
+      <form id="joinForm">
 
         <div class="form-row">
           <div class="form-group">
@@ -179,6 +175,25 @@ footer a{color:var(--purple2);text-decoration:none;font-family:'Courier Prime',m
 
         <button type="submit" class="join-btn">✊ SIGN &amp; JOIN O.V.E.R</button>
       </form>
+<script>
+document.getElementById('joinForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const f = this;
+  const get = n => (f.querySelector('[name="'+n+'"]') || {}).value || '';
+  const body =
+    'NEW O.V.E.R MEMBER PETITION SIGNATURE\n' +
+    '======================================\n\n' +
+    'Name: ' + get('first_name') + ' ' + get('last_name') + '\n' +
+    'Age: ' + get('age') + '\n' +
+    'Location: ' + get('location') + '\n' +
+    'Disabled: ' + (get('disabled') || 'Prefer not to say') + '\n' +
+    'Parent Email: ' + get('email') + '\n' +
+    'Why joining: ' + (get('why') || 'Not provided') + '\n\n' +
+    'Declaration signed: YES';
+  window.location.href = 'mailto:truongnvo@gmail.com?subject=' + encodeURIComponent('NEW O.V.E.R MEMBER PETITION SIGNATURE') + '&body=' + encodeURIComponent(body);
+  setTimeout(function(){ window.location.href = 'join-thanks.html'; }, 1000);
+});
+</script>
     </div>
   </div>
 </div>

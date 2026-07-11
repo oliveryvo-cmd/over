@@ -79,10 +79,7 @@ textarea{resize:vertical;min-height:110px;}
     </div>
   </div>
 
-  <form action="https://formsubmit.co/troungnvo@icloud.com" method="POST">
-    <input type="hidden" name="_subject" value="💙 NEW O.V.E.R CARE PACKAGE APPLICATION!">
-    <input type="hidden" name="_next" value="thanks.html">
-    <input type="hidden" name="_captcha" value="false">
+  <form id="applyForm">
 
     <div class="form-section">
       <div class="form-section-label"><span>1</span>// ABOUT YOU</div>
@@ -141,6 +138,29 @@ textarea{resize:vertical;min-height:110px;}
     <button type="submit" class="btn-submit">💙 SEND MY APPLICATION</button>
     <p class="btn-note">// 100% FREE · SHIPS WORLDWIDE · YOUR INFORMATION IS SAFE</p>
   </form>
+<script>
+document.getElementById('applyForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const f = this;
+  const get = n => (f.querySelector('[name="'+n+'"]') || {}).value || '';
+  const body =
+    'O.V.E.R CARE PACKAGE APPLICATION\n' +
+    '==================================\n\n' +
+    'Name: ' + get('first_name') + ' ' + get('last_name') + '\n' +
+    'Age: ' + get('age') + '\n' +
+    'Location: ' + get('location') + '\n' +
+    'Email: ' + get('email') + '\n\n' +
+    'Disability: ' + get('disability') + '\n' +
+    'Been ridiculed: ' + get('ridiculed') + '\n\n' +
+    'Their story:\n' + get('story') + '\n\n' +
+    'What package would mean:\n' + (get('meaning') || 'Not provided') + '\n\n' +
+    'SHIPPING ADDRESS\n' +
+    get('address') + '\n' +
+    get('city') + ', ' + get('country') + ' ' + get('zip');
+  window.location.href = 'mailto:truongnvo@gmail.com?subject=' + encodeURIComponent('CARE PACKAGE APPLICATION — O.V.E.R') + '&body=' + encodeURIComponent(body);
+  setTimeout(function(){ window.location.href = 'thanks.html'; }, 1000);
+});
+</script>
 </div>
 </body>
 </html>

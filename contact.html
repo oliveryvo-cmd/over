@@ -104,10 +104,7 @@ footer a{color:var(--teal);text-decoration:none;font-family:'Courier Prime',mono
     <div class="form-card">
       <h2>📡 SEND US A MESSAGE</h2>
       <p>Fill out the form and we'll get back to you within 48 hours.</p>
-      <form action="https://formsubmit.co/troungnvo@icloud.com" method="POST">
-        <input type="hidden" name="_subject" value="O.V.E.R CONTACT MESSAGE">
-        <input type="hidden" name="_next" value="contact-thanks.html">
-        <input type="hidden" name="_captcha" value="false">
+      <form id="contactForm">
 
         <div class="form-group">
           <label>I AM A... *</label>
@@ -141,6 +138,23 @@ footer a{color:var(--teal);text-decoration:none;font-family:'Courier Prime',mono
         </div>
         <button type="submit" class="submit-btn">📡 SEND MESSAGE</button>
       </form>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const f = this;
+  const get = n => (f.querySelector('[name="'+n+'"]') || {}).value || '';
+  const body =
+    'O.V.E.R CONTACT MESSAGE\n' +
+    '========================\n\n' +
+    'Type: ' + get('contact_type') + '\n' +
+    'Name: ' + get('name') + '\n' +
+    'Organization: ' + (get('organization') || 'Not provided') + '\n' +
+    'Email: ' + get('email') + '\n\n' +
+    'Message:\n' + get('message');
+  window.location.href = 'mailto:truongnvo@gmail.com?subject=' + encodeURIComponent('O.V.E.R CONTACT MESSAGE') + '&body=' + encodeURIComponent(body);
+  setTimeout(function(){ window.location.href = 'contact-thanks.html'; }, 1000);
+});
+</script>
     </div>
   </div>
 </div>

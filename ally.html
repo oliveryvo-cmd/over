@@ -152,11 +152,7 @@ footer a{color:var(--green);text-decoration:none;}
     <h2>✊ SIGN THE PLEDGE</h2>
     <p>Fill out the form below to become an official O.V.E.R Ally. You'll receive an Ally Card and your name goes on the O.V.E.R Ally Wall.</p>
 
-    <form action="https://formsubmit.co/troungnvo@icloud.com" method="POST">
-      <input type="hidden" name="_subject" value="NEW O.V.E.R ALLY SIGN-UP">
-      <input type="hidden" name="_next" value="ally-thanks.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="type" value="ALLY MEMBER">
+    <form id="allyForm">
 
       <div class="form-row">
         <div class="form-group">
@@ -212,6 +208,25 @@ footer a{color:var(--green);text-decoration:none;}
 
       <button type="submit" class="submit-btn">✊ SIGN THE PLEDGE &amp; BECOME AN ALLY</button>
     </form>
+<script>
+document.getElementById('allyForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const f = this;
+  const get = n => (f.querySelector('[name="'+n+'"]') || {}).value || '';
+  const body =
+    'NEW O.V.E.R ALLY SIGN-UP\n' +
+    '========================\n\n' +
+    'Name: ' + get('first_name') + ' ' + get('last_name') + '\n' +
+    'Age: ' + get('age') + '\n' +
+    'Location: ' + get('location') + '\n' +
+    'School: ' + (get('school') || 'Not provided') + '\n' +
+    'Parent Email: ' + get('email') + '\n' +
+    'Why they want to be an ally: ' + (get('why') || 'Not provided') + '\n\n' +
+    'Pledge accepted: YES';
+  window.location.href = 'mailto:truongnvo@gmail.com?subject=' + encodeURIComponent('NEW O.V.E.R ALLY SIGN-UP') + '&body=' + encodeURIComponent(body);
+  setTimeout(function(){ window.location.href = 'ally-thanks.html'; }, 1000);
+});
+</script>
   </div>
 </div>
 
